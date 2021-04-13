@@ -1,6 +1,6 @@
 .grid {
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 40px;
 }
 
 .section--title {
@@ -189,4 +189,12 @@ input {
 .curve-img {
   border-radius: 10px;
   overflow: hidden;
+}
+
+section {
+  margin-bottom: 3em;
+}
+
+.title-bar {
+  margin-bottom: 2em;
 }
