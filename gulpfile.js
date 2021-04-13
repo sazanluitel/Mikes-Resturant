@@ -9,6 +9,7 @@ var rename = require("gulp-rename");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var sourcemaps = require("gulp-sourcemaps");
+var concat = require("gulp-concat");
 
 //Copying the twig to HTML
 gulp.task("twig", function () {
@@ -29,6 +30,7 @@ gulp.task("minifyJs", async () => {
   gulp
     .src(["node_modules/bootstrap/dist/js/bootstrap.js", "src/js/*.js"])
     .pipe(uglify())
+    .pipe(concat("main.js"))
     .pipe(gulp.dest("dist/js"));
 });
 
@@ -56,7 +58,10 @@ gulp.task(
 //Watching
 const watch = async () => {
   gulp.watch("src/sass/**/*.scss", gulp.series("sass", "browser-reload"));
-  gulp.watch("src/js/*.js", gulp.series("minifyJs", "browser-reload"));
+  gulp.watch(
+    ["node_modules/bootstrap/dist/js/bootstrap.js", "src/js/*.js"],
+    gulp.series("minifyJs", "browser-reload")
+  );
   gulp.watch("src/**/*.twig", gulp.series("twig", "browser-reload"));
   gulp.watch("src/img/*", gulp.series("imageMin", "browser-reload"));
   httpserver.init(serveoptions);
