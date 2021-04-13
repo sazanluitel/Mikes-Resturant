@@ -26,24 +26,7 @@
 .pr-0 {
   padding-right: 0 !important;
 }
-.br-t {
-  border-top: 1px solid var(--border-color);
-}
-.br-b {
-  border-bottom: 1px solid var(--border-color);
-}
-.br-l {
-  border-left: 1px solid var(--border-color) !important;
-  @include sm {
-    border-left: 0 !important;
-  }
-}
-.br-r {
-  border-right: 1px solid var(--border-color);
-  @include sm {
-    border-right: 0;
-  }
-}
+
 a {
   text-decoration: none;
   outline: none;

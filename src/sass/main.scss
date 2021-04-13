@@ -1,13 +1,9 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./var/colors";
 @import "./var/fonts";
 @import "./mixins";
-@import "./layouts/responsive";
-@import "./layouts/header";
-@import "./layouts/footer";
+@import "./layouts/index";
 @import "./commonClass";
-
-//Importing Widgets
-@import "./layouts/widgets";
 
 //Importing Pages
 @import "./page/home";
@@ -29,10 +25,19 @@ body {
   }
 }
 main {
-  background-color: var(--white2);
+  background-color: var(--white);
+}
+.main--section {
+  display: flex;
+  width: 100%;
+  .main--right {
+    flex-grow: 2;
+    padding-left: 50px;
+  }
 }
 
 .wrapper {
-  width: 96%;
+  width: 100%;
+  padding: 0 50px;
   margin: 0 auto;
 }
