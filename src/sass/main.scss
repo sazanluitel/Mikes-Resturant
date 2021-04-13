@@ -1,14 +1,20 @@
-@import "node_modules/bootstrap/scss/bootstrap";
-//Importing Layouts
+@import "./var/colors";
+@import "./var/fonts";
+@import "./mixins";
+@import "./layouts/responsive";
 @import "./layouts/header";
 @import "./layouts/footer";
+@import "./commonClass";
+
+//Importing Widgets
+@import "./layouts/widgets";
 
 //Importing Pages
 @import "./page/home";
 
 html,
 body {
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   scrollbar-width: thin;
   &::-webkit-scrollbar {
@@ -29,5 +35,4 @@ main {
 .wrapper {
   width: 96%;
   margin: 0 auto;
-  overflow-x: hidden;
 }
