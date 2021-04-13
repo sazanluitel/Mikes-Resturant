@@ -56,7 +56,10 @@ gulp.task(
 //Watching
 const watch = async () => {
   gulp.watch("src/sass/**/*.scss", gulp.series("sass", "browser-reload"));
-  gulp.watch("src/js/*.js", gulp.series("minifyJs", "browser-reload"));
+  gulp.watch(
+    ["node_modules/bootstrap/dist/js/bootstrap.js", "src/js/*.js"],
+    gulp.series("minifyJs", "browser-reload")
+  );
   gulp.watch("src/**/*.twig", gulp.series("twig", "browser-reload"));
   gulp.watch("src/img/*", gulp.series("imageMin", "browser-reload"));
   httpserver.init(serveoptions);
