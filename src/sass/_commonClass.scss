@@ -3,10 +3,10 @@
   grid-gap: 15px;
 }
 
-.title--section {
-  font-size: 14px;
+.section--title {
+  font-size: 1.6em;
   color: var(--dark);
-  font-weight: $font-semibold;
+  font-weight: $font-bold;
 }
 .section--padding {
   padding: 15px 0;
@@ -72,7 +72,7 @@ a {
 .pp--title {
   color: var(--dark);
   font-size: 1em;
-  font-weight: $font-semibold;
+  font-weight: $font-bold;
   margin: 1em 0;
 }
 
@@ -127,8 +127,16 @@ a {
   }
 }
 .btn {
-  padding: 1em 2em;
+  padding: 0.6em 1em;
   border: 0;
+  background-color: var(--primary-color);
+  color: var(--black);
+  &:focus {
+    box-shadow: none;
+  }
+}
+.btn-secondary {
+  background-color: var(--grey);
 }
 .btn-load {
   background-color: rgb(112, 112, 112);
@@ -163,9 +171,8 @@ hr {
 }
 
 .readmore {
-  color: var(--dark3);
-  font-weight: $font-bold;
-  font-size: 0.8em;
+  color: var(--black);
+  font-weight: $font-medium;
   display: block;
   margin-top: 1em;
   padding-bottom: 1em;
@@ -187,4 +194,16 @@ hr {
   &.active {
     background-color: var(--dark);
   }
+}
+
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
+// Curve Img
+.curve-img {
+  border-radius: 10px;
+  overflow: hidden;
 }
