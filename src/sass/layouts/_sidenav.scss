@@ -45,13 +45,14 @@
 
   .app {
     justify-content: space-between;
+    padding: 0 0.8em;
     svg {
-      height: 30px;
+      height: 28px;
       width: auto;
     }
   }
   .sticky {
     position: sticky;
-    top: 0;
+    top: $wrapper--padding;
   }
 }
