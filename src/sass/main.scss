@@ -1,4 +1,4 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap/scss/bootstrap";
 @import "./var/colors";
 @import "./var/fonts";
 @import "./mixins";
@@ -13,6 +13,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   scrollbar-width: thin;
+  color: var(--black)
   &::-webkit-scrollbar {
     width: 8px;
   }
