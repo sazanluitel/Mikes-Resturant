@@ -9,7 +9,6 @@ var rename = require("gulp-rename");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var sourcemaps = require("gulp-sourcemaps");
-var concat = require("gulp-concat");
 
 //Copying the twig to HTML
 gulp.task("twig", function () {
@@ -30,7 +29,6 @@ gulp.task("minifyJs", async () => {
   gulp
     .src(["node_modules/bootstrap/dist/js/bootstrap.js", "src/js/*.js"])
     .pipe(uglify())
-    .pipe(concat("main.js"))
     .pipe(gulp.dest("dist/js"));
 });
 
