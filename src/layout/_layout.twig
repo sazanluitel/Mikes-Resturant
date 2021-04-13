@@ -12,8 +12,13 @@
     %} #}
   </head>
   <body>
-    {% include "_header.twig" %}{% block contents %}{% endblock %} {% include
-    "_footer.twig" %}
+    {% include "_sidenav.twig" %}
+    <aside class="main--right">
+      {% include "_header.twig" %}
+      <main class="home-page">{% block contents %}</main>
+      {% include "_footer.twig" %}
+    </aside>
+    {% endblock %} {% include "_footer.twig" %}
 
     <script type="text/javascript" src="./js/main.js"></script>
   </body>
