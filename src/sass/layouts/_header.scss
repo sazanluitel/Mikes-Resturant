@@ -1,5 +1,6 @@
 header {
   @include flexer(space-between, center);
+  margin: 1em 0;
   .header__left {
     .search--box {
       background-color: var(--grey);

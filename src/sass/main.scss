@@ -2,9 +2,7 @@
 @import "./var/colors";
 @import "./var/fonts";
 @import "./mixins";
-@import "./layouts/responsive";
-@import "./layouts/header";
-@import "./layouts/footer";
+@import "./layouts/index";
 @import "./commonClass";
 
 //Importing Pages
@@ -20,8 +18,17 @@ body {
 main {
   background-color: var(--white);
 }
+.main--section {
+  display: flex;
+  width: 100%;
+  .main--right {
+    flex-grow: 2;
+    padding: 1em 1em 1em 50px;
+  }
+}
 
 .wrapper {
-  width: 96%;
+  width: 100%;
+  padding: 0 50px;
   margin: 0 auto;
 }
