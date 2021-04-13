@@ -94,3 +94,7 @@
     scroll-snap-align: start;
   }
 }
+
+@mixin border-radius {
+  border-radius: 10px;
+}
