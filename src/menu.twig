@@ -7,8 +7,8 @@ endblock %} {% block javascripts %} {% endblock %} {% block contents %}
       <div class="form-group all-select">
         <select class="form-select" name="" id="">
           <option value="">All</option>
-          <option value="">Burger</option>
-          <option value="">Pizza</option>
+          <option value="">Veg</option>
+          <option value="">NonVeg</option>
         </select>
       </div>
       <div class="form-group inline-group">
@@ -214,7 +214,12 @@ endblock %} {% block javascripts %} {% endblock %} {% block contents %}
   <section class="menu-row">
     <div class="row">
       <div class="col-xl-3">
-        <div class="menu-item">
+        <a
+          class="menu-item"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#addFood"
+          href="#!"
+        >
           <figure>
             <img src="./img/menu1.png" alt="" />
           </figure>
@@ -255,12 +260,9 @@ endblock %} {% block javascripts %} {% endblock %} {% block contents %}
             </div>
             <h2><span>$</span>4.98</h2>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
-
-  {% extends './widgets/addFood.twig' %}
 </div>
-
-{% endblock %}
+{% include './widgets/_addFood.twig' %} {% endblock %}
