@@ -1,12 +1,52 @@
 .menu-page {
+  overflow: hidden;
   .filters {
-    form {
+    form.inline-form {
+      @include flexer(space-between, center);
       .form-group {
+        &.all-select {
+          width: 15%;
+        }
         select {
           padding: 0.6em 1em;
           border: 0;
           background-color: var(--grey);
           border-radius: 6px;
+          &:focus {
+            outline: none;
+            box-shadow: none;
+          }
+        }
+        &.inline-group {
+          width: 80%;
+          @include flexer(space-between, center);
+          overflow-x: scroll;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          .form-item {
+            .filter {
+              display: none;
+            }
+            .filter.check + label {
+              background-color: var(--primary-color);
+              color: var(--white);
+              svg {
+                stroke: var(--white);
+              }
+            }
+            .cust-checkbox {
+              background-color: transparent;
+              border: 1px solid var(--primary-color);
+              border-radius: 10px;
+              min-width: 15px;
+              svg {
+                stroke: var(--color-ac);
+                transition: 0.4s;
+              }
+              color: var(--color-ac);
+            }
+          }
         }
       }
     }
