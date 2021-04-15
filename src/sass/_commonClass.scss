@@ -105,6 +105,10 @@ a {
 .btn-secondary {
   background-color: var(--grey);
 }
+.btn-white {
+  background-color: var(--white);
+  color: var(--red);
+}
 .btn-load {
   background-color: rgb(112, 112, 112);
   color: #fff;
@@ -164,7 +168,8 @@ hr {
   }
 }
 
-input {
+input,
+textarea {
   &:focus {
     outline: none;
   }
