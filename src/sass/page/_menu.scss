@@ -1,6 +1,7 @@
 .menu-page {
   overflow: hidden;
   .filters {
+    margin-bottom: 2em;
     form.inline-form {
       @include flexer(space-between, center);
       .form-group {
@@ -25,6 +26,7 @@
             display: none;
           }
           .form-item {
+            margin-left: 1em;
             .filter {
               display: none;
             }
@@ -39,14 +41,55 @@
               background-color: transparent;
               border: 1px solid var(--primary-color);
               border-radius: 10px;
-              min-width: 15px;
+              min-width: 140px;
+              @include flexer(center, center);
               svg {
                 stroke: var(--color-ac);
                 transition: 0.4s;
+                margin-right: 1em;
               }
               color: var(--color-ac);
+              span {
+                white-space: nowrap;
+              }
             }
           }
+        }
+      }
+    }
+  }
+
+  .menu-row {
+    .menu-item {
+      position: relative;
+      figure {
+        margin: 0;
+        border-radius: 5px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 240px;
+          object-fit: cover;
+        }
+      }
+      .veg-no {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        .veg {
+          fill: var(--green);
+        }
+        .nonveg {
+          fill: var(--red);
+        }
+      }
+      .menu-infos {
+        margin: -2em auto 1em;
+        background-color: var(--white);
+        width: 80%;
+        padding: 1em;
+        h3 {
+          font-size: 1em;
         }
       }
     }
