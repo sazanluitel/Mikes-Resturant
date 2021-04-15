@@ -31,8 +31,12 @@ body {
   scrollbar-width: thin;
   font-size: 16px;
   color: var(--black);
+<<<<<<< HEAD
   scroll-behavior: smooth;
   font-size: 16px;
+=======
+  font-weight: $font-light;
+>>>>>>> fe3a3fd94271bf49ac129a1f26ee63745e3a7354
   &::-webkit-scrollbar {
     width: 8px;
   }
