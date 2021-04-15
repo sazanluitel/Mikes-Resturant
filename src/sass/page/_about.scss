@@ -13,7 +13,7 @@
     margin-bottom: 5em;
   }
 }
-.carosel {
+.carousel {
   position: relative;
   margin-bottom: 6em;
   .image-container {
@@ -23,7 +23,6 @@
     grid-template-columns: repeat(10, 100%);
     grid-template-rows: 1fr;
     @include scrollbar;
-
     img {
       @include image;
     }

@@ -2,18 +2,13 @@
 endblock %} {% block javascripts %} {% endblock %} {% block contents %}
 
 <main class="about-page">
-  <section class="carosel">
+  <section class="carousel">
     <div class="image-container">
-      <div>
-        <img src="./img/slider1.png" />
-      </div>
+      <img src="./img/slider1.png" class="active" />
 
-      <div>
-        <img src="./img/slider1.png" />
-      </div>
-      <div>
-        <img src="./img/slider1.png" />
-      </div>
+      <img src="./img/slider2.png" />
+
+      <img src="./img/slider3.png" />
     </div>
     <button class="prev slider-btn">
       <svg
@@ -243,5 +238,7 @@ endblock %} {% block javascripts %} {% endblock %} {% block contents %}
     </div>
   </section>
 </main>
+
+<script src="./js/customCarousel.js"></script>
 
 {% endblock %}
