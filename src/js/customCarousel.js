@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-  console.log("hi");
   const parent = document.querySelector(".carousel");
   const prev = parent.querySelector(".prev");
   const next = parent.querySelector(".next");
