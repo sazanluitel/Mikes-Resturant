@@ -1,0 +1,112 @@
+.about-page {
+  .introduction {
+    .intro__img {
+      text-align: center;
+      img {
+        height: 130px;
+        width: auto;
+        object-fit: contain;
+      }
+    }
+  }
+  section {
+    margin-bottom: 5em;
+  }
+}
+.carousel {
+  position: relative;
+  margin-bottom: 6em;
+  .image-container {
+    display: grid;
+    height: 300px;
+    width: 100%;
+    grid-template-columns: repeat(10, 100%);
+    grid-template-rows: 1fr;
+    @include scrollbar;
+    img {
+      @include image;
+    }
+  }
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    padding: 1em;
+    border: 0;
+    box-shadow: none;
+  }
+  .next {
+    right: -3.5em;
+  }
+  .prev {
+    left: -3.5em;
+  }
+}
+.history {
+  margin-top: 5em;
+  position: relative;
+  .tabs {
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 2em;
+    }
+  }
+}
+.team {
+  .card {
+    border: 0;
+    text-align: center;
+    img {
+      @include image;
+    }
+    .card__img {
+      height: 170px;
+      width: 170px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: auto;
+      margin-bottom: 1.2em;
+    }
+    .card__title {
+      font-size: 1.4em;
+      font-weight: $font-bold;
+      color: #000;
+    }
+  }
+}
+
+.achievements {
+  margin-bottom: 0;
+  .card {
+    border: 0;
+    height: 110px;
+    margin-bottom: 2em;
+    img {
+      @include image;
+    }
+    .card__img {
+      width: 180px;
+      object-fit: cover;
+      min-width: 180px;
+      height: 100%;
+
+      img {
+        @include image;
+      }
+    }
+    .title--wrapper {
+      width: 300px;
+      padding: 6px 50px;
+    }
+    .card__title {
+      font-size: 1.4em;
+      font-weight: $font-bold;
+      color: #000;
+    }
+    p {
+      @include lineclamp(4);
+    }
+  }
+}

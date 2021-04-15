@@ -9,8 +9,12 @@
 
 //Importing Pages
 @import "./page/home";
+<<<<<<< HEAD
 @import "./page/contact";
 @import "./page/menu";
+=======
+@import "./page/about";
+>>>>>>> 9ab685c9db8ce72973d609d2e0719e17d8c2e080
 
 /* --------------------------------------------------------
 version: 1.0
@@ -50,6 +54,11 @@ main {
   .main--right {
     flex-grow: 2;
     padding: $wrapper--padding;
+<<<<<<< HEAD
+=======
+    padding-left: 5em;
+    width: calc(100% - 250px);
+>>>>>>> 9ab685c9db8ce72973d609d2e0719e17d8c2e080
   }
 }
 

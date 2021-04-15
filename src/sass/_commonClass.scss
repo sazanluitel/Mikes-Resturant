@@ -8,6 +8,17 @@
   color: var(--dark);
   font-weight: $font-bold;
 }
+.section--title--wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3em;
+  &.section--title {
+    margin-bottom: 0;
+  }
+  .title--link {
+    color: var(--dark);
+  }
+}
 .section--padding {
   padding: 15px 0;
 }
@@ -61,16 +72,6 @@ a {
 
 .card--hr {
   flex-direction: row;
-  .card__body {
-    padding: 0 0.8em;
-    @include sm {
-      padding-right: 0;
-    }
-  }
-  .card__img {
-    min-width: 120px;
-    max-height: 96px;
-  }
 }
 .card--lg {
   .card__title--lg {
@@ -154,7 +155,8 @@ a {
 }
 hr {
   border: 0;
-  background-color: var(--border-color);
+  background-color: #acacac;
+  opacity: 0.7;
 }
 
 .readmore {

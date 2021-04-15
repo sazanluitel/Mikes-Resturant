@@ -1,0 +1,244 @@
+{% extends 'layout/_layout.twig' %} {% block title %}Berlin Pizza - About Us {%
+endblock %} {% block javascripts %} {% endblock %} {% block contents %}
+
+<main class="about-page">
+  <section class="carousel">
+    <div class="image-container">
+      <img src="./img/slider1.png" class="active" />
+
+      <img src="./img/slider2.png" />
+
+      <img src="./img/slider3.png" />
+    </div>
+    <button class="prev slider-btn">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 12H5"
+          stroke="#4F4F4F"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M12 19L5 12L12 5"
+          stroke="#4F4F4F"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <button class="next slider-btn">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12H19"
+          stroke="#4F4F4F"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M12 5L19 12L12 19"
+          stroke="#4F4F4F"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+  </section>
+  <section class="introduction">
+    <div class="row">
+      <div class="col-xl-6">
+        <div class="intro__desc">
+          <h2 class="section--title">Welcome to Berlin Pizza</h2>
+          <p>
+            Berlin Pizza Restaurant is located in 29a Farthing Grove Netherfield
+            Milton Keynes MK6 4JH is the place for you and all you need to do is
+            decide what you want to eat. They have all those favourites pizza
+            such as Pizza American Hot, Pizza Chicken Tikka.
+          </p>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="intro__img">
+          <img src="./img/logo.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section class="history">
+    <div class="row">
+      <div class="col-xl-4">
+        <div class="intro__desc">
+          <h2 class="section--title">History</h2>
+          <div class="timeline"></div>
+        </div>
+      </div>
+      <div class="col-xl-8">
+        <div class="tabs">
+          <article>
+            <img src="./img/slider2.png" alt="" />
+            <p>
+              Berlin Pizza Restaurant is located in 29a Farthing Grove
+              Netherfield Milton Keynes MK6 4JH is the place for you and all you
+              need to do is decide what you want to eat. They have all those
+              favourites pizza such as Pizza American Hot, Pizza Chicken Tikka
+              etc
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team">
+    <div class="section--title--wrapper">
+      <h2 class="section--title">Our Team</h2>
+      <a class="title--link">
+        <span>See all</span>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 12H19"
+            stroke="#4F4F4F"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 5L19 12L12 19"
+            stroke="#4F4F4F"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+    <div class="row">
+      <article class="col-xl-3">
+        <div class="card">
+          <div class="card__img">
+            <img src="./img/pp1.png" />
+          </div>
+          <h2 class="card__title">Dan Mc Senna</h2>
+          <p>CEO/ Owner</p>
+        </div>
+      </article>
+      <article class="col-xl-3">
+        <div class="card">
+          <div class="card__img">
+            <img src="./img/pp2.png" />
+          </div>
+          <h2 class="card__title">Lauren Wonder</h2>
+          <p>Franchise Manager</p>
+        </div>
+      </article>
+      <article class="col-xl-3">
+        <div class="card">
+          <div class="card__img">
+            <img src="./img/pp1.png" />
+          </div>
+          <h2 class="card__title">Dan Mc Senna</h2>
+          <p>CEO/ Owner</p>
+        </div>
+      </article>
+      <article class="col-xl-3">
+        <div class="card">
+          <div class="card__img">
+            <img src="./img/pp2.png" />
+          </div>
+          <h2 class="card__title">Lauren Wonder</h2>
+          <p>Franchise Manager</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="achievements">
+    <div class="section--title--wrapper">
+      <h2 class="section--title">Achievements</h2>
+      <a class="title--link">
+        <span>See all</span>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 12H19"
+            stroke="#4F4F4F"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 5L19 12L12 19"
+            stroke="#4F4F4F"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+    <div class="card card--hr">
+      <div class="card__img">
+        <img src="./img/slider1.png" alt="" />
+      </div>
+      <div class="title--wrapper">
+        <h2 class="card__title">Best Food in Town</h2>
+        <cite>-@foodiefoodie</cite>
+      </div>
+      <div class="card__body">
+        <p>
+          Berlin Pizza Restaurant is located in 29a Farthing Grove Netherfield
+          Milton Keynes MK6 4JH is the place for you and all you need to do is
+          decide what you want to eat. They have all those favourites pizza such
+          as Pizza American Hot, Pizza Chicken Tikka etc
+        </p>
+      </div>
+    </div>
+    <div class="card card--hr">
+      <div class="card__img">
+        <img src="./img/slider2.png" alt="" />
+      </div>
+      <div class="title--wrapper">
+        <h2 class="card__title">Amazing service.</h2>
+        <cite>-@renaultdrupak</cite>
+      </div>
+      <div class="card__body">
+        <p>
+          Berlin Pizza Restaurant is located in 29a Farthing Grove Netherfield
+          Milton Keynes MK6 4JH is the place for you and all you need to do is
+          decide what you want to eat. They have all those favourites pizza such
+          as Pizza American Hot, Pizza Chicken Tikka etc
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="./js/customCarousel.js"></script>
+
+{% endblock %}
