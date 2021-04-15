@@ -19,15 +19,18 @@
     color: var(--dark);
   }
 }
+.title-small {
+  font-size: 2ch;
+  color: var(--dark);
+  font-weight: $font-bold;
+}
 .section--padding {
   padding: 15px 0;
 }
 .pt-0 {
   padding-top: 0 !important;
 }
-.pt-2 {
-  padding-top: 2em;
-}
+
 .pb-0 {
   padding-bottom: 0 !important;
 }
@@ -43,26 +46,6 @@ a {
   outline: none;
 }
 
-.sub-title {
-  padding: 0.6em;
-  background-color: var(--dark);
-  color: var(--white2);
-  font-weight: $font-bold;
-  font-size: 1.2em;
-  @include sm {
-    font-size: 1em;
-    margin-bottom: 0;
-  }
-}
-.category--title {
-  background-color: var(--pills);
-  font-size: 0.8em;
-  padding: 4px 12px;
-  border-radius: 6px;
-  color: var(--white);
-  margin-bottom: 0;
-  width: min-content;
-}
 .pp--title {
   color: var(--dark);
   font-size: 1em;
