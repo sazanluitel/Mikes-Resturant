@@ -5,6 +5,15 @@
     form.inline-form {
       @include flexer(space-between, center);
       .form-group {
+        &:nth-child(1) {
+          width: 15%;
+        }
+        &:nth-child(2) {
+          width: 70%;
+        }
+        &:nth-child(3) {
+          width: 10%;
+        }
         select {
           padding: 0.6em 1em;
           border: 0;
@@ -15,11 +24,17 @@
             box-shadow: none;
           }
         }
+        .seeall {
+          button {
+            border: 0;
+            background-color: transparent;
+            font-size: 0.8em;
+          }
+        }
         &.inline-group {
           // width: 80%;
-          @include flexer(space-between, center);
-          overflow-x: scroll;
-          @include scrollbar;
+          @include flexer(flex-end, center);
+          gap: 1em;
           &::-webkit-scrollbar {
             display: none;
           }
@@ -51,6 +66,50 @@
                 white-space: nowrap;
               }
             }
+          }
+        }
+        .accordion {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .accordion-collapse {
+    margin-bottom: 2em;
+    .accordion-body.inline-group {
+      padding: 0;
+      @include flexer(flex-start, center);
+      flex-wrap: wrap;
+      gap: 1em;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .form-item {
+        .filter {
+          display: none;
+        }
+        .filter.check + label {
+          background-color: var(--primary-color);
+          color: var(--white);
+          svg {
+            stroke: var(--white);
+          }
+        }
+        .cust-checkbox {
+          background-color: transparent;
+          border: 1px solid var(--primary-color);
+          border-radius: 10px;
+          min-width: 140px;
+          @include flexer(center, center);
+          svg {
+            stroke: var(--color-ac);
+            transition: 0.4s;
+            margin-right: 1em;
+          }
+          color: var(--color-ac);
+          span {
+            white-space: nowrap;
           }
         }
       }

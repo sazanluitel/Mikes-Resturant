@@ -31,29 +31,17 @@
     });
   });
 
-  //Select Size and Change Price
-  // let alloptionsize = document.querySelectorAll(".size-item input");
-  // let currentactiveprice = alloptionsize[0];
-  // currentactiveprice.classList.add("checked-price");
-  // alloptionsize.forEach((a) => {
-  //   //Handling CLick
-  //   a.addEventListener("click", () => {
-  //     currentactiveprice.classList.remove("checked-price");
-  //     currentactiveprice = a;
-  //     currentactiveprice.classList.add("checked-price");
-  //   });
-  // });
-  // //FOr Price switch
-  // var activecont = document.querySelector(".selected-price");
-  // alloptionsize.forEach((tab) => {
-  //   tab.addEventListener("click", () => {
-  //     activecont.classList.remove("selected-price");
-  //     var find = "target-" + tab.id;
-  //     activecont = document.getElementById(find);
-  //     activecont.classList.add("selected-price");
-  //     console.log(activecont);
-  //   });
-  // });
+  //Toggle The Text SeeAll
+  let seall = document.getElementById("seeall");
+  var seaclick = 0;
+  seall.addEventListener("click", () => {
+    if (seaclick % 2 === 0) {
+      seall.innerHTML = "Close";
+    } else {
+      seall.innerHTML = "See All";
+    }
+    seaclick++;
+  });
 
   // cart check tag
   const dec = document.querySelectorAll(".cart__wrapper .dec");
