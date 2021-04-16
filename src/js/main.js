@@ -13,11 +13,13 @@
   };
 
   let allcheckbox = document.querySelectorAll(".filter");
-  allcheckbox.forEach((a) => {
-    a.addEventListener("click", () => {
-      checkchecked(a);
+  if (allcheckbox !== null) {
+    allcheckbox.forEach((a) => {
+      a.addEventListener("click", () => {
+        checkchecked(a);
+      });
     });
-  });
+  }
 
   //Set Price
   const setprice = (a, b) => {
@@ -25,23 +27,27 @@
     document.getElementById(tar).innerHTML = b;
   };
   let alloptionsize = document.querySelectorAll(".size-item label");
-  alloptionsize.forEach((a) => {
-    a.addEventListener("mouseover", () => {
-      setprice(a.getAttribute("data-name"), a.getAttribute("data-price"));
+  if (alloptionsize !== null) {
+    alloptionsize.forEach((a) => {
+      a.addEventListener("mouseover", () => {
+        setprice(a.getAttribute("data-name"), a.getAttribute("data-price"));
+      });
     });
-  });
+  }
 
   //Toggle The Text SeeAll
   let seall = document.getElementById("seeall");
   var seaclick = 0;
-  seall.addEventListener("click", () => {
-    if (seaclick % 2 === 0) {
-      seall.innerHTML = "Close";
-    } else {
-      seall.innerHTML = "See All";
-    }
-    seaclick++;
-  });
+  if (seall !== null) {
+    seall.addEventListener("click", () => {
+      if (seaclick % 2 === 0) {
+        seall.innerHTML = "Close";
+      } else {
+        seall.innerHTML = "See All";
+      }
+      seaclick++;
+    });
+  }
 
   // cart check tag
   const dec = document.querySelectorAll(".cart__wrapper .dec");
