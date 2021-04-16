@@ -112,45 +112,44 @@
           text-align: right;
         }
       }
-    }
-  }
-
-  .accordion-collapse {
-    width: 100%;
-    margin-top: 2em;
-    .accordion-body.inline-group {
-      padding: 0;
-      @include flexer(flex-start, center);
-      flex-wrap: wrap;
-      gap: 1em;
-      &::-webkit-scrollbar {
-        display: none;
-      }
-      .form-item {
-        .filter {
-          display: none;
-        }
-        .filter.check + label {
-          background-color: var(--primary-color);
-          color: var(--white);
-          svg {
-            stroke: var(--white);
+      .accordion-collapse {
+        width: 100%;
+        margin-top: 2em;
+        .accordion-body.inline-group {
+          padding: 0;
+          @include flexer(flex-start, center);
+          flex-wrap: wrap;
+          gap: 1em;
+          &::-webkit-scrollbar {
+            display: none;
           }
-        }
-        .cust-checkbox {
-          background-color: transparent;
-          border: 1px solid var(--primary-color);
-          border-radius: 10px;
-          min-width: 140px;
-          @include flexer(center, center);
-          svg {
-            stroke: var(--color-ac);
-            transition: 0.4s;
-            margin-right: 1em;
-          }
-          color: var(--color-ac);
-          span {
-            white-space: nowrap;
+          .form-item {
+            .filter {
+              display: none;
+            }
+            .filter.check + label {
+              background-color: var(--primary-color);
+              color: var(--white);
+              svg {
+                stroke: var(--white);
+              }
+            }
+            .cust-checkbox {
+              background-color: transparent;
+              border: 1px solid var(--primary-color);
+              border-radius: 10px;
+              min-width: 140px;
+              @include flexer(center, center);
+              svg {
+                stroke: var(--color-ac);
+                transition: 0.4s;
+                margin-right: 1em;
+              }
+              color: var(--color-ac);
+              span {
+                white-space: nowrap;
+              }
+            }
           }
         }
       }
