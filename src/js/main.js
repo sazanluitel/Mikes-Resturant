@@ -73,4 +73,12 @@
       }
     });
   });
+
+  //Veg Check
+  let raditems = document.querySelectorAll(".radio-item label");
+  raditems.forEach((a) => {
+    a.addEventListener("click", () => {
+      a.classList.toggle("check");
+    });
+  });
 })();
