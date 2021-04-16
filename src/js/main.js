@@ -22,6 +22,19 @@
   }
 
   //Set Price
+  const checkchecked2 = (a) => {
+    // let thisone = document.getElementById(a.getAttribute("for"));
+    let thisone = a.previousElementSibling;
+
+    console.log(thisone);
+    console.log(thisone.checked);
+    if (thisone.checked === true) {
+      console.log("checked");
+      thisone.classList.add("check");
+    } else {
+      thisone.classList.remove("check");
+    }
+  };
   const setprice = (a, b) => {
     let tar = "target-" + a;
     document.getElementById(tar).innerHTML = b;
@@ -31,6 +44,9 @@
     alloptionsize.forEach((a) => {
       a.addEventListener("mouseover", () => {
         setprice(a.getAttribute("data-name"), a.getAttribute("data-price"));
+      });
+      a.addEventListener("click", () => {
+        checkchecked2(a);
       });
     });
   }
