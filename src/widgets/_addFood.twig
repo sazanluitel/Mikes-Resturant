@@ -1,0 +1,112 @@
+<div
+  class="offcanvas offcanvas-end cart show"
+  data-bs-scroll="true"
+  data-bs-backdrop="false"
+  tabindex="-1"
+  id="addFood"
+>
+  <div class="offcanvas-header">
+    <div class="section--title--wrapper">
+      <h2 class="section--title white">Add Order</h2>
+      <button
+        class="title--link btn-close text-reset"
+        data-bs-dismiss="offcanvas"
+      ></button>
+    </div>
+  </div>
+  <div class="offcanvas-body">
+    <figure class="image">
+      <img src="./img/menu1.png" alt="" />
+    </figure>
+    <form class="form" action="#!" method="post">
+      <h2 class="section--title white">Add Order</h2>
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <select class="form-select">
+            <option>Size</option>
+            <option value="1" selected>9"</option>
+            <option value="2">12"</option>
+            <option value="3">15"</option>
+            <option value="3">18"</option>
+          </select>
+        </div>
+        <div class="form-group col-sm-6">
+          <select class="form-select">
+            <option selected>Dip</option>
+            <option value="1">Dip - BBQ</option>
+            <option value="2">Dip - Chilli</option>
+            <option value="3">Dip - Garlic & Herb</option>
+          </select>
+        </div>
+        <div class="form-group col-sm-6">
+          <button class="select">
+            <span> Extra Dip</span>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 4.16675V15.8334"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M4.16666 10H15.8333"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="form-group col-sm-6">
+          <button class="select">
+            <span> Extra Toppings</span
+            ><svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 4.16675V15.8334"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M4.16666 10H15.8333"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="d-flex cart-middle">
+        <div class="cart__wrapper">
+          <span class="dec">-</span>
+          <input type="number" value="1" min="0" max="10" readonly />
+          <span class="inc">+</span>
+        </div>
+        <h2 class="totalPrice white section--title">£25.65</h2>
+      </div>
+
+      <div class="buttons">
+        <button class="btn Add Order">Add Order</button>
+        <button class="btn btn-secondary">Proceed to Checkout</button>
+      </div>
+    </form>
+  </div>
+</div>

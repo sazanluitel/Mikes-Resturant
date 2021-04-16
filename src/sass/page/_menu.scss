@@ -16,8 +16,10 @@
           }
         }
         &.inline-group {
+          // width: 80%;
           @include flexer(space-between, center);
           overflow-x: scroll;
+          @include scrollbar;
           &::-webkit-scrollbar {
             display: none;
           }
@@ -57,6 +59,8 @@
 
   .menu-row {
     .menu-item {
+      display: block;
+      color: var(--black);
       position: relative;
       transition: 0.3s;
       figure {

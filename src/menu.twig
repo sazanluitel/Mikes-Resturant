@@ -1,7 +1,7 @@
 {% extends 'layout/_layout.twig' %} {% block title %} Menu - Berlin Pizza {%
 endblock %} {% block javascripts %} {% endblock %} {% block contents %}
 
-<main class="menu-page">
+<div class="menu-page">
   <section class="filters">
     <form action="" class="inline-form">
       <div class="form-group all-select">
@@ -173,40 +173,6 @@ endblock %} {% block javascripts %} {% endblock %} {% block contents %}
             <span>Sides</span></label
           >
         </div>
-        <div class="form-item">
-          <input type="checkbox" class="filter" id="pizza2" name="filter" />
-          <label class="btn cust-checkbox" for="pizza2"
-            ><svg
-              width="14"
-              height="17"
-              viewBox="0 0 14 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.91411 10.6473C6.16735 10.6473 5.58061 11.2341 5.58061 11.9631C5.58061 12.692 6.18513 13.2788 6.91411 13.2788C7.64309 13.2788 8.2476 12.692 8.2476 11.9631C8.2476 11.2341 7.66086 10.6473 6.91411 10.6473ZM6.91411 12.5676C6.55851 12.5676 6.29181 12.3009 6.29181 11.9631C6.29181 11.6252 6.57629 11.3585 6.91411 11.3585C7.25193 11.3585 7.53641 11.6252 7.53641 11.9631C7.53641 12.3009 7.25193 12.5676 6.91411 12.5676Z"
-                fill="white"
-              />
-              <path
-                d="M7.30526 9.02932C7.14524 9.17156 7.14524 9.42048 7.30526 9.58049C7.46528 9.72273 7.7142 9.72273 7.85644 9.58049C8.01646 9.43826 8.01646 9.18934 7.85644 9.02932C7.7142 8.8693 7.46528 8.8693 7.30526 9.02932Z"
-                fill="white"
-              />
-              <path
-                d="M6.94967 14.1677C6.78965 14.3278 6.78965 14.5589 6.94967 14.7189C7.10968 14.8612 7.3586 14.8612 7.50084 14.7189C7.66086 14.5767 7.66086 14.3278 7.50084 14.1677C7.3586 14.0077 7.10968 14.0077 6.94967 14.1677Z"
-                fill="white"
-              />
-              <path
-                d="M3.39368 5.11782C3.23366 5.26006 3.23366 5.50898 3.39368 5.669C3.5537 5.81123 3.80262 5.81123 3.94486 5.669C4.10488 5.52676 4.10488 5.27784 3.94486 5.11782C3.80262 4.9578 3.5537 4.9578 3.39368 5.11782Z"
-                fill="white"
-              />
-              <path
-                d="M13.546 2.30854C13.4216 2.02406 13.1726 1.8107 12.8882 1.70402C9.11882 0.406088 4.99387 0.423868 1.24231 1.77514C0.940047 1.88182 0.708908 2.11296 0.584449 2.37966C0.459989 2.66414 0.459989 2.98418 0.584449 3.26866L2.70026 8.17592L6.09623 16.0524C6.27403 16.4791 6.68297 16.7458 7.14525 16.7458C7.60752 16.7458 8.01646 16.4791 8.19426 16.0524L13.5638 3.19754C13.6705 2.91306 13.6705 2.59302 13.546 2.30854ZM3.39368 8.0159C3.41146 7.98034 3.41146 7.96256 3.42924 7.927C3.5537 7.67808 3.76706 7.4825 4.03376 7.37582C4.30046 7.28692 4.58493 7.3047 4.85163 7.42916C5.38503 7.67808 5.59839 8.31816 5.34947 8.85156C5.22501 9.10048 5.01165 9.29606 4.74495 9.38496C4.49603 9.47386 4.22934 9.45608 3.98042 9.36718L3.39368 8.0159ZM11.448 6.38015C11.2524 5.59783 10.5412 5.01109 9.70556 5.01109C8.70988 5.01109 7.892 5.81119 7.892 6.80686C7.892 7.80254 8.6921 8.60264 9.70556 8.60264C10.0434 8.60264 10.3634 8.51374 10.6301 8.33594L7.5364 15.768C7.42972 16.0169 7.19859 16.0347 7.14525 16.0347C7.07413 16.0347 6.84299 16.0169 6.75409 15.7857L4.31823 10.1673C4.33601 10.1673 4.37158 10.1673 4.38935 10.1673C4.58493 10.1673 4.78051 10.1317 4.97609 10.0606C5.42059 9.90057 5.77619 9.58053 5.98955 9.15382C6.20291 8.7271 6.22069 8.24704 6.06067 7.80254C5.90065 7.35804 5.58061 6.98466 5.15389 6.78909C4.42491 6.43349 3.5537 6.62907 3.03808 7.23358L1.90016 4.54881C3.0203 4.10431 4.19378 3.80206 5.38503 3.65982C5.31391 3.81984 5.27835 3.97986 5.27835 4.15765C5.27835 4.88663 5.88287 5.47337 6.61185 5.47337C7.34082 5.47337 7.94534 4.88663 7.94534 4.15765C7.94534 3.9443 7.892 3.74872 7.8031 3.5887C9.3144 3.65982 10.7901 3.99764 12.2125 4.56659L11.448 6.38015ZM10.7901 6.80686C10.7901 7.41138 10.2923 7.89144 9.68778 7.89144C9.08326 7.89144 8.58542 7.3936 8.58542 6.80686C8.58542 6.20235 9.08326 5.72229 9.68778 5.72229C10.3101 5.72229 10.7901 6.20235 10.7901 6.80686ZM5.98955 4.13987C5.98955 3.8554 6.20291 3.62426 6.46961 3.55314C6.55851 3.55314 6.64741 3.55314 6.73631 3.55314C7.02079 3.60648 7.23414 3.8554 7.23414 4.13987C7.23414 4.47769 6.94967 4.74439 6.61185 4.74439C6.27403 4.74439 5.98955 4.47769 5.98955 4.13987ZM12.8882 2.91306L12.4792 3.89096C10.6657 3.16198 8.70988 2.80638 6.77187 2.84194C6.71853 2.84194 6.66519 2.82416 6.59407 2.82416C6.52295 2.82416 6.43405 2.82416 6.36293 2.84194C4.72717 2.91306 3.1092 3.26866 1.5979 3.87318L1.20675 2.9664C1.17119 2.85972 1.17119 2.75304 1.20675 2.64636C1.26009 2.53968 1.34899 2.46856 1.45567 2.41522C5.04721 1.13507 9.01214 1.11729 12.6392 2.36188C12.7459 2.39744 12.8348 2.46856 12.8882 2.57524C12.9415 2.6997 12.9415 2.80638 12.8882 2.91306Z"
-                fill="white"
-              />
-            </svg>
-            <span>Pizza</span></label
-          >
-        </div>
       </div>
     </form>
   </section>
@@ -214,7 +180,12 @@ endblock %} {% block javascripts %} {% endblock %} {% block contents %}
   <section class="menu-row">
     <div class="row">
       <div class="col-xl-3">
-        <div class="menu-item">
+        <a
+          class="menu-item"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#addFood"
+          href="#!"
+        >
           <figure>
             <img src="./img/menu1.png" alt="" />
           </figure>
@@ -238,29 +209,37 @@ endblock %} {% block javascripts %} {% endblock %} {% block contents %}
             <div class="select-size">
               <div class="size-item">
                 <input type="radio" name="size" id="9" />
-                <label for="9" data-price="4.98" data-name="mozzerella">9''</label>
+                <label for="9" data-price="4.98" data-name="mozzerella"
+                  >9''</label
+                >
               </div>
               <div class="size-item">
                 <input type="radio" name="size" id="12" />
-                <label for="12" data-price="5.88" data-name="mozzerella">12''</label>
+                <label for="12" data-price="5.88" data-name="mozzerella"
+                  >12''</label
+                >
               </div>
               <div class="size-item">
                 <input type="radio" name="size" id="15" />
-                <label for="15" data-price="6.54" data-name="mozzerella">15''</label>
+                <label for="15" data-price="6.54" data-name="mozzerella"
+                  >15''</label
+                >
               </div>
               <div class="size-item">
                 <input type="radio" name="size" id="18" />
-                <label for="18" data-price="10.2" data-name="mozzerella">18''</label>
+                <label for="18" data-price="10.2" data-name="mozzerella"
+                  >18''</label
+                >
               </div>
             </div>
           </div>
           <div class="price">
             <h2><span>$ </span><strong id="target-mozzerella">4.98</strong></h2>
           </div>
-        </div>
+        </a>
       </div>
       <div class="col-xl-3">
-        <div class="menu-item">
+        <a class="menu-item">
           <figure>
             <img src="./img/menu2.png" alt="" />
           </figure>
@@ -283,30 +262,37 @@ endblock %} {% block javascripts %} {% endblock %} {% block contents %}
             <h3>Becon Pizza</h3>
             <div class="select-size">
               <div class="size-item">
-                <input type="radio" name="size" id="becon9"/>
-                <label for="becon9" data-price="4.98" data-name="becon">9''</label>
+                <input type="radio" name="size" id="becon9" />
+                <label for="becon9" data-price="4.98" data-name="becon"
+                  >9''</label
+                >
               </div>
               <div class="size-item">
-                <input type="radio" name="size" id="becon12"/>
-                <label for="becon12" data-price="5.99" data-name="becon">12''</label>
+                <input type="radio" name="size" id="becon12" />
+                <label for="becon12" data-price="5.99" data-name="becon"
+                  >12''</label
+                >
               </div>
               <div class="size-item">
-                <input type="radio" name="size" id="becon15"/>
-                <label for="becon15" data-price="6.45" data-name="becon">15''</label>
+                <input type="radio" name="size" id="becon15" />
+                <label for="becon15" data-price="6.45" data-name="becon"
+                  >15''</label
+                >
               </div>
               <div class="size-item">
-                <input type="radio" name="size"id="becon18" >
-                <label for="becon18" data-price="8.8" data-name="becon"/>18''</label>
+                <input type="radio" name="size" id="becon18" />
+                <label for="becon18" data-price="8.8" data-name="becon"
+                  >18''</label
+                >
               </div>
             </div>
           </div>
           <div class="price">
             <h2><span>$ </span><strong id="target-becon">4.98</strong></h2>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
-</main>
-
-{% endblock %}
+</div>
+{% include './widgets/_addFood.twig' %} {% endblock %}

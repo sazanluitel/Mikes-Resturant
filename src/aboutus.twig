@@ -1,7 +1,7 @@
 {% extends 'layout/_layout.twig' %} {% block title %}Berlin Pizza - About Us {%
 endblock %} {% block javascripts %} {% endblock %} {% block contents %}
 
-<main class="about-page">
+<div class="about-page">
   <section class="carousel">
     <div class="image-container">
       <img src="./img/slider1.png" class="active" />
@@ -119,6 +119,54 @@ endblock %} {% block javascripts %} {% endblock %} {% block contents %}
         </div>
       </div>
       <div class="col-xl-8">
+        <div class="tabs show">
+          <article>
+            <img src="./img/slider2.png" alt="" />
+            <p>
+              Berlin Pizza Restaurant is located in 29a Farthing Grove
+              Netherfield Milton Keynes MK6 4JH is the place for you and all you
+              need to do is decide what you want to eat. They have all those
+              favourites pizza such as Pizza American Hot, Pizza Chicken Tikka
+              etc
+            </p>
+          </article>
+        </div>
+        <div class="tabs">
+          <article>
+            <img src="./img/slider1.png" alt="" />
+            <p>
+              Berlin Pizza Restaurant is located in 29a Farthing Grove
+              Netherfield Milton Keynes MK6 4JH is the place for you and all you
+              need to do is decide what you want to eat. They have all those
+              favourites pizza such as Pizza American Hot, Pizza Chicken Tikka
+              etc
+            </p>
+          </article>
+        </div>
+        <div class="tabs">
+          <article>
+            <img src="./img/slider3.png" alt="" />
+            <p>
+              Berlin Pizza Restaurant is located in 29a Farthing Grove
+              Netherfield Milton Keynes MK6 4JH is the place for you and all you
+              need to do is decide what you want to eat. They have all those
+              favourites pizza such as Pizza American Hot, Pizza Chicken Tikka
+              etc
+            </p>
+          </article>
+        </div>
+        <div class="tabs">
+          <article>
+            <img src="./img/slider1.png" alt="" />
+            <p>
+              Berlin Pizza Restaurant is located in 29a Farthing Grove
+              Netherfield Milton Keynes MK6 4JH is the place for you and all you
+              need to do is decide what you want to eat. They have all those
+              favourites pizza such as Pizza American Hot, Pizza Chicken Tikka
+              etc
+            </p>
+          </article>
+        </div>
         <div class="tabs">
           <article>
             <img src="./img/slider2.png" alt="" />
@@ -267,8 +315,46 @@ endblock %} {% block javascripts %} {% endblock %} {% block contents %}
       </div>
     </div>
   </section>
-</main>
+</div>
 
 <script src="./js/customCarousel.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    //timeline is
+    const timeline = document.querySelector(".timeline");
+    let top = 94;
+    timeline.scrollTop = top;
+
+    [...timeline.querySelectorAll(".title-small:not(.dots)")].map(
+      (elem, index) => {
+        elem.addEventListener("click", (e) => {
+          e.preventDefault();
+          let elemtop;
+          if (elem.nextElementSibling.classList.contains("active")) {
+            elemtop = timeline.scrollTop - top;
+            scrollTo(elemtop);
+            activeChange(elem, index);
+          } else if (elem.previousElementSibling.classList.contains("active")) {
+            elemtop = timeline.scrollTop + top;
+            scrollTo(elemtop);
+            activeChange(elem, index);
+          }
+        });
+
+        const activeChange = (elem, index) => {
+          timeline
+            .querySelector(".title-small.active")
+            .classList.remove("active");
+          elem.classList.add("active");
+          document.querySelector(".tabs.show").classList.remove("show");
+          document.querySelectorAll(".tabs")[index].classList.add("show");
+        };
+        const scrollTo = (top) => {
+          timeline.scrollTo({ top: top, behavior: "smooth" });
+        };
+      }
+    );
+  });
+</script>
 
 {% endblock %}
