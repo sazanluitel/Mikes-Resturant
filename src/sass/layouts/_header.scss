@@ -42,11 +42,11 @@ header {
   .modal-dialog {
     max-width: 750px;
     .modal-content {
+      padding: 0 2em;
       @include flexer(center, center);
       min-height: 500px;
       max-height: 500px;
       border-radius: 8px;
-      padding: 1em;
       background-image: url(../img/login.png);
       background-size: contain;
       background-repeat: no-repeat;

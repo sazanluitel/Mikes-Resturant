@@ -101,20 +101,26 @@
   }
 
   //Click event for the branches
-  // let maindroppe = document.querySelector(".selected-branch");
-  // if (maindroppe !== null) {
-  //   maindroppe.addEventListener("mouseover", () => {
-  //     maindroppe.parentNode.classList.toggle("show");
-  //   });
-  // }
-  // let allsub = document.querySelectorAll(".subdroppe");
-  // if (allsub !== null) {
-  //   allsub.forEach((a) => {
-  //     a.addEventListener("mouseover", () => {
-  //       a.classList.toggle("show");
-  //     });
-  //   });
-  // }
+  let maindroppe = document.querySelector(".droppe");
+  if (maindroppe !== null) {
+    maindroppe.addEventListener("mouseover", () => {
+      maindroppe.classList.add("show");
+    });
+    maindroppe.addEventListener("mouseleave", () => {
+      maindroppe.classList.remove("show");
+    });
+  }
+  let allsub = document.querySelectorAll(".subdroppe");
+  if (allsub !== null) {
+    allsub.forEach((a) => {
+      a.addEventListener("mouseover", () => {
+        a.classList.add("show");
+      });
+      a.addEventListener("mouseleave", () => {
+        a.classList.remove("show");
+      });
+    });
+  }
 
   //Signup Login toging
   let logmod = document.querySelector(".login");
