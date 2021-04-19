@@ -27,7 +27,10 @@ gulp.task("imageMin", async () => {
 //Minifying Js
 gulp.task("minifyJs", async () => {
   gulp
-    .src(["node_modules/bootstrap/dist/js/bootstrap.js", "src/js/*.js"])
+    .src([
+      "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "src/js/*.js",
+    ])
     .pipe(uglify())
     .pipe(gulp.dest("dist/js"));
 });
