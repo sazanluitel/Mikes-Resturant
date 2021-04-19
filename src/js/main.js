@@ -99,4 +99,20 @@
       });
     });
   }
+
+  //Click event for the branches
+  let maindroppe = document.querySelector(".selected-branch");
+  if (maindroppe !== null) {
+    maindroppe.addEventListener("click", () => {
+      maindroppe.parentNode.classList.toggle("show");
+    });
+  }
+  let allsub = document.querySelectorAll(".subdroppe");
+  if (allsub !== null) {
+    allsub.forEach((a) => {
+      a.addEventListener("click", () => {
+        a.classList.toggle("show");
+      });
+    });
+  }
 })();

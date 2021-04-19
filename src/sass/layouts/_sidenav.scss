@@ -41,6 +41,86 @@
         }
       }
     }
+
+    //Droppe
+    .droppe {
+      background-color: var(--grey);
+      border-radius: 8px;
+      padding: 1em;
+      font-size: 0.8em;
+      cursor: pointer;
+      position: relative;
+      .selected-branch {
+        @include flexer(space-between, center);
+      }
+      &.show {
+        .dropped {
+          display: block;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      .dropped {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        background-color: var(--grey);
+        border-radius: 8px;
+        width: 100%;
+        padding: 2em;
+        cursor: pointer;
+        transition: 0.3s;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        .dropped-itm {
+          ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li {
+              margin-bottom: 1em;
+              &:last-child {
+                margin-bottom: 0;
+              }
+              a {
+                display: block;
+                text-align: left;
+                color: var(--black);
+                span {
+                  margin-right: 1em;
+                }
+              }
+              &.subdroppe {
+                position: relative;
+                .sub-dropped {
+                  position: absolute;
+                  display: none;
+                  visibility: hidden;
+                  opacity: 0;
+                  background-color: var(--grey);
+                  border-radius: 8px;
+                  width: 100%;
+                  padding: 2em;
+                  cursor: pointer;
+                  transition: 0.3s;
+                  position: absolute;
+                  left: calc(100% + 2em);
+                  top: 0;
+                }
+                &.show {
+                  .sub-dropped {
+                    display: block;
+                    visibility: visible;
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .creator {
     font-size: 0.8em;
@@ -60,5 +140,6 @@
   .sticky {
     position: sticky;
     top: $wrapper--padding;
+    z-index: 2;
   }
 }
