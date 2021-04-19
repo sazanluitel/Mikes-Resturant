@@ -20,7 +20,7 @@
     </figure>
     <form class="form" action="#!" method="post">
       <h2 class="section--title white">Add Order</h2>
-      <div class="row">
+      <div class="row gx-3">
         <div class="form-group col-sm-6">
           <select class="form-select">
             <option>Size</option>
@@ -39,36 +39,16 @@
           </select>
         </div>
         <div class="form-group col-sm-6">
-          <button class="select">
-            <span> Extra Dip</span>
+          <!-- Button trigger modal -->
+
+          <button
+            class="select"
+            data-bs-toggle="modal"
+            data-bs-target="#extraTopping"
+            type="button"
+          >
+            <span> Extra Dip / Toppings</span>
             <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10 4.16675V15.8334"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M4.16666 10H15.8333"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="form-group col-sm-6">
-          <button class="select">
-            <span> Extra Toppings</span
-            ><svg
               width="20"
               height="20"
               viewBox="0 0 20 20"
@@ -100,7 +80,9 @@
           <input type="number" value="1" min="0" max="10" readonly />
           <span class="inc">+</span>
         </div>
-        <h2 class="totalPrice white section--title">£25.65</h2>
+        <h2 class="totalPrice white section--title">
+          <span>£</span> <b>25.65</b>
+        </h2>
       </div>
 
       <div class="buttons">
@@ -110,3 +92,4 @@
     </form>
   </div>
 </div>
+{% include '_extraDip.twig' %}

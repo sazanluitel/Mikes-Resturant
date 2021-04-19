@@ -1,8 +1,6 @@
 "use strict";
-
 (function () {
-  console.log("Have a good day 🎈");
-
+  console.log("Have a good day :balloon:");
   //Checkbox style toggle on check
   const checkchecked = (a) => {
     if (a.checked === true) {
@@ -11,7 +9,6 @@
       a.classList.remove("check");
     }
   };
-
   let allcheckbox = document.querySelectorAll(".filter");
   if (allcheckbox !== null) {
     allcheckbox.forEach((a) => {
@@ -20,14 +17,10 @@
       });
     });
   }
-
   //Set Price
   const checkchecked2 = (a) => {
     // let thisone = document.getElementById(a.getAttribute("for"));
     let thisone = a.previousElementSibling;
-
-    console.log(thisone);
-    console.log(thisone.checked);
     if (thisone.checked === true) {
       console.log("checked");
       thisone.classList.add("check");
@@ -50,7 +43,6 @@
       });
     });
   }
-
   //Toggle The Text SeeAll
   let seall = document.getElementById("seeall");
   var seaclick = 0;
@@ -64,19 +56,20 @@
       seaclick++;
     });
   }
-
   // cart check tag
   const dec = document.querySelectorAll(".cart__wrapper .dec");
   const inc = document.querySelectorAll(".cart__wrapper .inc");
-
   [...dec].map((dec) => {
     dec.addEventListener("click", (e) => {
       e.preventDefault();
       let value = dec.nextElementSibling.value;
       if (value > 1) dec.nextElementSibling.value = --value;
+      let priceElem = e.currentTarget.parentNode.nextElementSibling.querySelector(
+        "b"
+      );
+      priceInc(e, value);
     });
   });
-
   [...inc].map((inc) => {
     inc.addEventListener("click", (e) => {
       e.preventDefault();
@@ -86,9 +79,20 @@
       let value = elem.value;
       if (value < max) {
         elem.value = ++value;
+        priceInc(e, value);
       }
     });
   });
+
+  // increse price
+  const priceInc = (e, value) => {
+    let priceElem = e.currentTarget.parentNode.nextElementSibling.querySelector(
+      "b"
+    );
+    let price = priceElem.getAttribute("price");
+    price = (parseFloat(price) * value).toFixed(2);
+    priceElem.innerText = price;
+  };
 
   //Veg Check
   let raditems = document.querySelectorAll(".radio-item label");

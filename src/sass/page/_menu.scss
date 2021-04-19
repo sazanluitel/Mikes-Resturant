@@ -42,6 +42,7 @@
               background-color: var(--grey);
               font-size: 0.9em;
               transition: 0.3s;
+              cursor: pointer;
               &:after {
                 position: absolute;
                 content: "";

@@ -207,3 +207,31 @@ section {
 .title-bar {
   margin-bottom: 2em;
 }
+
+.modal--common {
+  .modal-content {
+    border: 0;
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.15);
+    padding: 2em;
+    .section--title {
+      font-weight: $font-medium;
+      font-size: 1.4em;
+      margin-bottom: 1em;
+    }
+  }
+  .modal-body,
+  .modal-footer {
+    padding: 0;
+  }
+  .modal-footer {
+    border: 0;
+    .buttons {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

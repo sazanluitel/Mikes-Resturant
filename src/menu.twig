@@ -219,12 +219,7 @@ endblock %} {% block javascripts %} {% endblock %} {% block contents %}
   <section class="menu-row">
     <div class="row">
       <div class="col-xl-3">
-        <a
-          class="menu-item"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#addFood"
-          href="#!"
-        >
+        <a class="menu-item" href="#!">
           <figure>
             <img src="./img/menu1.png" alt="" />
           </figure>
@@ -278,7 +273,7 @@ endblock %} {% block javascripts %} {% endblock %} {% block contents %}
         </a>
       </div>
       <div class="col-xl-3">
-        <a class="menu-item">
+        <a class="menu-item" href="#!">
           <figure>
             <img src="./img/menu2.png" alt="" />
           </figure>
@@ -334,4 +329,6 @@ endblock %} {% block javascripts %} {% endblock %} {% block contents %}
     </div>
   </section>
 </div>
-{% include './widgets/_addFood.twig' %} {% endblock %}
+{% include './widgets/_addFood.twig' %}
+<script src="./js/addFood.js"></script>
+{% endblock %}
