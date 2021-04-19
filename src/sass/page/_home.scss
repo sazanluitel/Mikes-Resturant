@@ -20,6 +20,9 @@
   .combos {
     .combo-grid {
       grid-template-columns: 2fr 1fr;
+      @include sm {
+        grid-template-columns: 1fr;
+      }
       .combo--item {
         img {
           width: 100%;
@@ -28,13 +31,22 @@
         }
         &:nth-child(1) {
           grid-row: 1/2 span;
+          @include sm {
+            grid-row: 1;
+          }
         }
         &:nth-child(2),
         &:nth-child(3) {
           grid-column: 2;
+          @include sm {
+            grid-column: 1;
+          }
         }
         &:nth-child(4) {
           grid-column: 1/2 span;
+          @include sm {
+            grid-column: 1;
+          }
         }
       }
     }
@@ -42,6 +54,9 @@
 
   .try {
     .try-item {
+      @include lg {
+        margin-bottom: 1em;
+      }
       a {
         color: var(--black);
         figure {

@@ -1,7 +1,14 @@
 header {
   @include flexer(space-between, center);
+  @include lg {
+    flex-wrap: wrap;
+  }
   margin: 0 0 1em;
   .header__left {
+    @include lg {
+      width: 100%;
+      margin-bottom: 1em;
+    }
     .search--box {
       background-color: var(--grey);
       border-radius: 5px;
@@ -24,6 +31,10 @@ header {
     }
   }
   .header__right {
+    @include lg {
+      width: 100%;
+      text-align: right;
+    }
     .buttons {
       button {
         &:last-child {
