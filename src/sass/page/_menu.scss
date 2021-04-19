@@ -4,27 +4,127 @@
     margin-bottom: 2em;
     form.inline-form {
       @include flexer(space-between, center);
+      flex-wrap: wrap;
       .form-group {
-        select {
-          padding: 0.6em 1em;
-          border: 0;
-          background-color: var(--grey);
-          border-radius: 6px;
-          &:focus {
-            outline: none;
-            box-shadow: none;
+        &:nth-child(1) {
+          width: 15%;
+        }
+        &:nth-child(2) {
+          width: 70%;
+        }
+        &:nth-child(3) {
+          width: 10%;
+        }
+        .seeall {
+          button {
+            border: 0;
+            background-color: transparent;
+            font-size: 0.8em;
+          }
+        }
+        &.vegcheck {
+          @include flexer(space-between, center);
+          .radio-item {
+            margin-right: 1em;
+            &:last-child {
+              margin-right: 0;
+            }
+            input {
+              display: none;
+            }
+            label {
+              cursor: pointer;
+              border-radius: 24px;
+              position: relative;
+              padding: 0.4em 1em 0.4em 3em;
+              color: var(--black);
+              font-weight: $font-medium;
+              background-color: var(--grey);
+              font-size: 0.9em;
+              transition: 0.3s;
+              cursor: pointer;
+              &:after {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                background-color: var(--white);
+                right: calc(96% - 24px);
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 50%;
+                transition: 0.3s;
+                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+              }
+              &.check {
+                padding: 0.4em 3em 0.4em 1em;
+                &:after {
+                  right: 2%;
+                }
+                &.veg {
+                  background-color: var(--green);
+                  color: var(--white);
+                }
+                &.nonveg {
+                  background-color: var(--red);
+                  color: var(--white);
+                }
+              }
+            }
           }
         }
         &.inline-group {
-          // width: 80%;
-          @include flexer(space-between, center);
-          overflow-x: scroll;
-          @include scrollbar;
+          @include flexer(flex-end, center);
+          gap: 1em;
           &::-webkit-scrollbar {
             display: none;
           }
           .form-item {
             margin-left: 1em;
+            .filter {
+              display: none;
+            }
+            .filter.check + label {
+              background-color: var(--primary-color);
+              color: var(--white);
+              svg {
+                stroke: var(--white);
+              }
+            }
+            .cust-checkbox {
+              background-color: transparent;
+              border: 1px solid var(--primary-color);
+              border-radius: 10px;
+              min-width: 140px;
+              @include flexer(center, center);
+              svg {
+                stroke: var(--color-ac);
+                transition: 0.4s;
+                margin-right: 1em;
+              }
+              color: var(--color-ac);
+              span {
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+        .accordion {
+          text-align: right;
+        }
+      }
+      .accordion-collapse {
+        width: 100%;
+        margin-top: 2em;
+        .accordion-body.inline-group {
+          padding: 0;
+          @include flexer(flex-start, center);
+          flex-wrap: wrap;
+          gap: 1em;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          .form-item {
             .filter {
               display: none;
             }
@@ -59,6 +159,8 @@
 
   .menu-row {
     .menu-item {
+      display: block;
+      color: var(--black);
       position: relative;
       transition: 0.3s;
       figure {

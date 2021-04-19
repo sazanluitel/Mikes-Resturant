@@ -42,6 +42,12 @@
       }
     }
   }
+  .creator {
+    font-size: 0.8em;
+    a {
+      color: var(--black);
+    }
+  }
 
   .app {
     justify-content: space-between;
