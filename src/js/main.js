@@ -101,18 +101,36 @@
   }
 
   //Click event for the branches
-  let maindroppe = document.querySelector(".selected-branch");
-  if (maindroppe !== null) {
-    maindroppe.addEventListener("click", () => {
-      maindroppe.parentNode.classList.toggle("show");
+  // let maindroppe = document.querySelector(".selected-branch");
+  // if (maindroppe !== null) {
+  //   maindroppe.addEventListener("mouseover", () => {
+  //     maindroppe.parentNode.classList.toggle("show");
+  //   });
+  // }
+  // let allsub = document.querySelectorAll(".subdroppe");
+  // if (allsub !== null) {
+  //   allsub.forEach((a) => {
+  //     a.addEventListener("mouseover", () => {
+  //       a.classList.toggle("show");
+  //     });
+  //   });
+  // }
+
+  //Signup Login toging
+  let logmod = document.querySelector(".login");
+  let signmod = document.querySelector(".signup");
+  let tologin = document.querySelector("#loginbtn");
+  let tosign = document.querySelector("#signbtn");
+  if (tosign !== null) {
+    tosign.addEventListener("click", () => {
+      logmod.classList.remove("active");
+      signmod.classList.add("active");
     });
   }
-  let allsub = document.querySelectorAll(".subdroppe");
-  if (allsub !== null) {
-    allsub.forEach((a) => {
-      a.addEventListener("click", () => {
-        a.classList.toggle("show");
-      });
+  if (tologin !== null) {
+    tologin.addEventListener("click", () => {
+      signmod.classList.remove("active");
+      logmod.classList.add("active");
     });
   }
 })();

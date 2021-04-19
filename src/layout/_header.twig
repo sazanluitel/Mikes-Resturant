@@ -31,7 +31,11 @@
   <div class="header__right">
     <div class="user--actions">
       <div class="buttons">
-        <button class="btn btn-secondary">
+        <button
+          class="btn btn-secondary"
+          data-bs-toggle="modal"
+          data-bs-target="#login"
+        >
           <svg
             width="15"
             height="15"
@@ -94,3 +98,84 @@
     </div>
   </div>
 </header>
+
+<!--LoginSingup Modal -->
+<div
+  class="modal login-modal fade"
+  id="login"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="form">
+            <div class="signup">
+              <h3>Sign Up</h3>
+              <form action="">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" id="email" />
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" id="password"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="password2">Confirm Password</label>
+                  <input type="password" id="password2"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="text" id="phone">
+                </div>
+                <div class="form-group">
+                  <button class="btn">
+                    <span>Sign Up</span>
+                  </button>
+                  <small>Already a user? <span id="loginbtn">Login</span></small>
+                </div>
+              </form>
+            </div>            
+            <div class="login active">
+              <h3>Login</h3>
+              <form action="">
+                <div class="form-group">
+                  <label for="log_email">Email</label>
+                  <input type="text" id="log_email" />
+                </div>
+                <div class="form-group">
+                  <label for="log_password">Password</label>
+                  <input type="password" id="log_password"></textarea>
+                </div>
+                <div class="form-group">
+                  <button class="btn">
+                    <span>Sign Up</span>
+                  </button>
+                  <small>Don't have an account? <span id="signbtn">Signup</span></small>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="sayings">
+            <div class="box">
+              <p>
+                Molestias in qui culpa. Voluptas deleniti autem natus
+                perferendis eum esse. Voluptatem ipsa vel
+              </p>
+              <span>-user76</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
