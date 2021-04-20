@@ -236,11 +236,56 @@ section {
   }
 }
 
+@keyframes vibrate {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
 .notfound__404 {
   min-height: 80vh;
   @include flexer(center, center);
+  position: relative;
   flex-wrap: wrap;
   p {
     margin-bottom: 0;
+  }
+  .floating__piza {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    svg {
+      fill: var(--primary-color);
+      width: 150px;
+      path {
+        &:nth-child(12) {
+          animation: vibrate 3s linear infinite both;
+        }
+        &:nth-child(3) {
+          animation: vibrate 3s linear infinite both;
+        }
+      }
+    }
   }
 }
