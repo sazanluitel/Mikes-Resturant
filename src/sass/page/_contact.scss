@@ -7,11 +7,21 @@
     background-position-x: 200px;
     min-height: 600px;
     @include flexer(flex-start, center);
+    @include md {
+      background-position-x: 100px;
+    }
+    @include sm {
+      background-position-x: unset;
+    }
     .contact-form {
       background-color: var(--white);
       box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
       padding: 2em;
       width: 500px;
+      @include sm {
+        width: 90%;
+        margin: auto;
+      }
       h2,
       h3 {
         font-size: 1.5em;
@@ -101,9 +111,23 @@
     .meet-row {
       background-color: var(--primary-color);
       @include flexer(space-between, center);
+      @include md {
+        padding: 1em;
+      }
+      @include md {
+        flex-wrap: wrap;
+      }
       .info {
         width: 280px;
         margin-left: 70px;
+        @include md {
+          width: 49%;
+          margin-left: 0;
+        }
+        @include sm {
+          width: 100%;
+          margin-bottom: 1em;
+        }
         span {
           font-size: 1.4em;
           font-weight: $font-bold;
@@ -113,6 +137,13 @@
       .button {
         flex-grow: 1;
         text-align: center;
+        @include md {
+          width: 49%;
+        }
+        @include sm {
+          width: 100%;
+          margin-bottom: 1em;
+        }
       }
       .illus {
         flex-grow: 1;

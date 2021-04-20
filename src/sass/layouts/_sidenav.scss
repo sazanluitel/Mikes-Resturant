@@ -4,6 +4,11 @@
   padding: $wrapper--padding 30px;
   padding-left: 0 !important;
   border-right: 1px solid #e5e5e5;
+  @include md {
+    position: fixed;
+    left: -250px;
+    top: 0;
+  }
   .logo {
     display: flex;
     justify-content: center;
