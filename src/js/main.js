@@ -151,8 +151,9 @@
     sidebar.classList.add("show");
   });
   document.addEventListener("click", (e) => {
-    var checkit = hamburger.contains(e.target);
-    if (!checkit) {
+    var checkit = sidebar.contains(e.target);
+    var checkit2 = hamburger.contains(e.target);
+    if (!checkit && !checkit2) {
       sidebar.classList.remove("show");
     }
   });

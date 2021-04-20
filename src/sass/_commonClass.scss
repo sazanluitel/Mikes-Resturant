@@ -108,6 +108,11 @@ a {
 }
 .btn-secondary {
   background-color: var(--grey);
+  &:hover,
+  &:focus {
+    background-color: var(--grey);
+    color: var(--black);
+  }
 }
 .btn-white {
   background-color: var(--white);

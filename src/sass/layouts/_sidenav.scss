@@ -11,6 +11,8 @@
     transition: 0.3s;
     padding: 1em !important;
     z-index: 190;
+    height: 100vh;
+    overflow-y: auto;
   }
   &.show {
     @include md {
