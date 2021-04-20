@@ -235,3 +235,12 @@ section {
     }
   }
 }
+
+.notfound__404 {
+  min-height: 80vh;
+  @include flexer(center, center);
+  flex-wrap: wrap;
+  p {
+    margin-bottom: 0;
+  }
+}
