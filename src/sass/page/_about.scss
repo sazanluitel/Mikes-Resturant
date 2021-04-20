@@ -38,9 +38,15 @@
   }
   .next {
     right: -3.5em;
+    @include md {
+      display: none;
+    }
   }
   .prev {
     left: -3.5em;
+    @include md {
+      display: none;
+    }
   }
 }
 .history {
@@ -99,10 +105,18 @@
 
 .achievements {
   margin-bottom: 0;
+  .card--hr {
+    @include md {
+      flex-wrap: wrap;
+    }
+  }
   .card {
     border: 0;
     height: 110px;
     margin-bottom: 2em;
+    @include md {
+      height: auto;
+    }
     img {
       @include image;
     }
@@ -115,15 +129,38 @@
       img {
         @include image;
       }
+      @include md {
+        width: 49%;
+        img {
+          height: 140px;
+          object-fit: cover;
+        }
+      }
+      @include sm {
+        width: 100%;
+      }
     }
     .title--wrapper {
       width: 300px;
       padding: 6px 50px;
+      @include md {
+        width: 49%;
+      }
+      @include sm {
+        width: 100%;
+        padding: 1em 0;
+      }
     }
     .card__title {
       font-size: 1.4em;
       font-weight: $font-bold;
       color: #000;
+    }
+    .card__body {
+      @include md {
+        width: 100%;
+        margin-top: 1em;
+      }
     }
     p {
       @include lineclamp(4);
