@@ -88,6 +88,10 @@
         position: absolute;
         left: 100%;
         top: 0;
+        @include md {
+          left: 0;
+          top: 100%;
+        }
         .dropped-itm {
           padding: 0.5em 0;
           ul {
@@ -124,6 +128,9 @@
                   position: absolute;
                   left: 100%;
                   top: 0;
+                  @include md {
+                    position: unset;
+                  }
                 }
                 &.show {
                   .sub-dropped {
