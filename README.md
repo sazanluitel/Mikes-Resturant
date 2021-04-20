@@ -1,6 +1,6 @@
 ## Gulp Starter
 
-This is project is created with a gulp starter for twig templating and includes the bootstrap 5.
+This project is created with a gulp starter for twig templating and includes the bootstrap 5.
 
 To begin first run
 
