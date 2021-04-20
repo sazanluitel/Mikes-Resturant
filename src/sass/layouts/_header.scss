@@ -3,16 +3,20 @@ header {
   @include lg {
     flex-wrap: wrap;
   }
+  @include md {
+    flex-direction: column-reverse;
+  }
   margin: 0 0 1em;
   .header__left {
-    @include sm {
-      width: 64%;
+    @include md {
+      width: 100%;
+      margin-top: 1em;
     }
     .search--box {
       background-color: var(--grey);
       border-radius: 5px;
-      width: 300px;
-      @include sm {
+      width: 282px;
+      @include md {
         width: 100%;
       }
       form {
@@ -36,11 +40,28 @@ header {
     }
   }
   .header__right {
-    @include sm {
-      width: 27%;
+    @include md {
+      width: 100%;
+      @include flexer(space-between, center);
     }
-    @include xsm {
-      width: 32%;
+    .mobile-nav {
+      display: none;
+      @include md {
+        display: block;
+      }
+      #ham {
+        span {
+          display: block;
+          width: 30px;
+          height: 3px;
+          border-radius: 4px;
+          margin-bottom: 0.5em;
+          background-color: var(--black);
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
     }
     .buttons {
       @include sm {

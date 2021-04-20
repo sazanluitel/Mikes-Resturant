@@ -8,6 +8,15 @@
     position: fixed;
     left: -250px;
     top: 0;
+    transition: 0.3s;
+    padding: 1em !important;
+    z-index: 190;
+  }
+  &.show {
+    @include md {
+      left: 0;
+      background-color: var(--white);
+    }
   }
   .logo {
     display: flex;
