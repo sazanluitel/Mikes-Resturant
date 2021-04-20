@@ -1,8 +1,16 @@
+$xsm: 420px;
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1290px;
 $xxl: 1400px;
+
+//For Xtra Small
+@mixin xsm {
+  @media screen and (max-width: ($xsm)) {
+    @content;
+  }
+}
 
 //For Small
 @mixin sm {

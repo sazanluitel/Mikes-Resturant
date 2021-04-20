@@ -5,14 +5,16 @@ header {
   }
   margin: 0 0 1em;
   .header__left {
-    @include lg {
-      width: 100%;
-      margin-bottom: 1em;
+    @include sm {
+      width: 64%;
     }
     .search--box {
       background-color: var(--grey);
       border-radius: 5px;
-      min-width: 300px;
+      width: 300px;
+      @include sm {
+        width: 100%;
+      }
       form {
         .form-group {
           @include flexer(space-between, center);
@@ -25,24 +27,43 @@ header {
             flex-grow: 2;
             border: 0;
             background-color: transparent;
+            @include sm {
+              font-size: 0.8em;
+            }
           }
         }
       }
     }
   }
   .header__right {
-    @include lg {
-      width: 100%;
-      text-align: right;
+    @include sm {
+      width: 27%;
+    }
+    @include xsm {
+      width: 32%;
     }
     .buttons {
+      @include sm {
+        text-align: right;
+      }
       button {
         &:last-child {
           margin-left: 2em;
+          @include lg {
+            margin-left: 0.5em;
+          }
+          @include sm {
+            margin-left: 0;
+          }
         }
         svg,
         span {
           pointer-events: none;
+        }
+        @include lg {
+          span {
+            display: none;
+          }
         }
       }
     }
