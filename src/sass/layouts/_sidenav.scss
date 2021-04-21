@@ -113,25 +113,25 @@
               }
               &.subdroppe {
                 position: relative;
-                .sub-dropped {
-                  background-color: #f4f4f4;
-                  padding: 0.5em 0;
-                  position: absolute;
-                  display: none;
-                  visibility: hidden;
-                  opacity: 0;
-                  background-color: var(--grey);
-                  border-radius: 8px;
-                  width: 100%;
-                  cursor: pointer;
-                  transition: 0.3s;
-                  position: absolute;
-                  left: 100%;
-                  top: 0;
-                  @include md {
-                    position: unset;
-                  }
-                }
+                // .sub-dropped {
+                //   background-color: #f4f4f4;
+                //   padding: 0.5em 0;
+                //   position: absolute;
+                //   display: none;
+                //   visibility: hidden;
+                //   opacity: 0;
+                //   background-color: var(--grey);
+                //   border-radius: 8px;
+                //   width: 100%;
+                //   cursor: pointer;
+                //   transition: 0.3s;
+                //   position: absolute;
+                //   left: 100%;
+                //   top: 0;
+                //   @include md {
+                //     position: unset;
+                //   }
+                // }
                 &.show {
                   .sub-dropped {
                     display: block;

@@ -260,6 +260,7 @@
             label {
               display: inline-block;
               padding: 0.5em;
+              cursor: pointer;
               &:hover {
                 background-color: var(--primary-color);
                 color: var(--white);
