@@ -49,6 +49,62 @@
           }
         }
       }
+      .top-slider {
+        height: 100%;
+        .owl-stage-outer {
+          height: 100%;
+          .owl-stage {
+            height: 100%;
+            .owl-item {
+              height: 100%;
+              .item {
+                height: 100%;
+                img {
+                  width: auto;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+            }
+          }
+        }
+        &:hover {
+          .owl-nav {
+            .owl-prev {
+              left: 2%;
+            }
+            .owl-next {
+              right: 2%;
+            }
+          }
+        }
+        .owl-nav {
+          .owl-prev {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -5%;
+            transition: 0.3s;
+            span {
+              font-size: 2em;
+              color: var(--white);
+              font-family: sans-serif;
+            }
+          }
+          .owl-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -5%;
+            transition: 0.3s;
+            span {
+              font-size: 2em;
+              color: var(--white);
+              font-family: sans-serif;
+            }
+          }
+        }
+      }
     }
   }
 
