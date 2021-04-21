@@ -210,3 +210,38 @@
     width: 100px;
   }
 }
+
+.download__container {
+  margin: 1em 0;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      margin-bottom: 1em;
+      &:hover {
+        a {
+          img {
+            transform: translateX(4px) rotate(18deg);
+          }
+          span {
+            transform: translateX(4px);
+          }
+        }
+      }
+      a {
+        color: var(--black);
+        img {
+          height: 30px;
+          margin-right: 1em;
+          transition: 0.3s;
+        }
+        span {
+          border-bottom: 1px solid var(--black);
+          transition: 0.3s;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
