@@ -113,6 +113,10 @@
               }
               &.subdroppe {
                 position: relative;
+                transition: 0.3s;
+                &:hover {
+                  background-color: var(--primary-color);
+                }
                 // .sub-dropped {
                 //   background-color: #f4f4f4;
                 //   padding: 0.5em 0;
