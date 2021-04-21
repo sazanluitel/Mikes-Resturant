@@ -5,7 +5,10 @@
   max-width: 100%;
   color: var(--grery);
   visibility: visible;
-
+  @include sm {
+    min-width: 100%;
+    max-width: 100%;
+  }
   .section--title--wrapper {
     width: 100%;
     .section--title {
@@ -179,6 +182,17 @@
             height: 50px;
             padding: 0 1em;
           }
+        }
+      }
+      .collection-list {
+        padding: 1em 0;
+        h4 {
+          color: var(--white);
+          font-size: 1em;
+        }
+        ul {
+          color: var(--white);
+          padding-left: 1em;
         }
       }
     }
