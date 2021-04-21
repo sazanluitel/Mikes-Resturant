@@ -301,3 +301,33 @@
     }
   }
 }
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.make-pizza {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 4;
+  background-color: var(--primary-color);
+  &:hover {
+    a svg {
+      animation: none;
+    }
+  }
+  a {
+    color: var(--black);
+    svg {
+      animation: rotate 2s ease-in-out infinite both;
+    }
+  }
+}
