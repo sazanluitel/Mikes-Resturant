@@ -47,7 +47,8 @@ header {
     .mobile-nav {
       display: none;
       @include md {
-        display: block;
+        display: flex;
+        align-items: center;
       }
       #ham {
         span {
@@ -57,9 +58,16 @@ header {
           border-radius: 4px;
           margin-bottom: 0.5em;
           background-color: var(--black);
+          margin-right: 1em;
           &:last-child {
             margin-bottom: 0;
           }
+        }
+      }
+      a {
+        display: block;
+        img {
+          width: 50px;
         }
       }
     }
