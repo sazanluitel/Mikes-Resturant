@@ -20,7 +20,6 @@
           }
           @include md {
             width: 100%;
-            margin-bottom: 1em;
           }
         }
         &:nth-child(3) {
@@ -28,6 +27,11 @@
           @include xl {
             width: 20%;
           }
+          @include md {
+            width: 100%;
+          }
+        }
+        &:nth-child(4) {
           @include md {
             width: 100%;
           }
@@ -101,8 +105,17 @@
           @include xl {
             flex-wrap: wrap;
           }
+          @include md {
+            justify-content: space-evenly;
+          }
           gap: 1em;
+          @include md {
+            gap: 0;
+          }
           .form-item {
+            @include md {
+              margin-top: 1em;
+            }
             .filter {
               display: none;
             }
@@ -135,12 +148,16 @@
           text-align: right;
           @include md {
             text-align: center;
+            margin-top: 1em;
           }
         }
       }
       .accordion-collapse {
         width: 100%;
-        margin-top: 2em;
+        margin: 1em 0;
+        @include md {
+          margin-bottom: 0;
+        }
         .accordion-body.inline-group {
           padding: 0;
           @include flexer(flex-start, center);
@@ -148,6 +165,9 @@
           gap: 1em;
           &::-webkit-scrollbar {
             display: none;
+          }
+          @include md {
+            justify-content: space-evenly;
           }
           .form-item {
             .filter {
