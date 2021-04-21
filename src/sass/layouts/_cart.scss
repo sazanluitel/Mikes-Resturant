@@ -6,7 +6,7 @@
   color: var(--grery);
   visibility: visible;
   @include sm {
-    min-width: 100%;
+    min-width: 101%;
     max-width: 100%;
   }
   .section--title--wrapper {
@@ -134,10 +134,22 @@
       .icon {
         width: 40px;
         margin-right: 1em;
+        @include md {
+          width: 30px;
+        }
+        @include sm {
+          width: 20px;
+        }
         svg {
           width: 40px;
           height: 100%;
           fill: var(--white);
+          @include md {
+            width: 30px;
+          }
+          @include sm {
+            width: 20px;
+          }
         }
       }
       .info {
@@ -146,6 +158,9 @@
           font-weight: $font-medium;
           color: var(--white);
           margin-bottom: 0;
+          @include sm {
+            font-size: 0.8em;
+          }
         }
         small {
           font-size: 0.8em;
