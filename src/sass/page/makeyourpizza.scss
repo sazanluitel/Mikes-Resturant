@@ -22,12 +22,27 @@
       border-radius: 50%;
       background-image: linear-gradient(to right, #f3f3f3 50%, #eeeeee 50%);
       margin: auto;
+      display: flex;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      img[src=""],
+      img[src="null"] {
+        display: none;
+      }
+      & > div {
+        width: 50%;
+      }
     }
     .dips {
-      margin: 50px 0;
+      margin: 50px auto;
       @include scrollbar;
       display: flex;
-      justify-content: center;
+      // justify-content: center;
+      gap: 1em;
+      max-width: 400px;
       .item {
         height: 75px;
         width: 75px;
@@ -36,6 +51,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        scroll-snap-align: start;
       }
     }
     .price--title {
