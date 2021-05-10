@@ -294,3 +294,25 @@ section {
     }
   }
 }
+
+.req {
+  color: #f4ca03;
+  text-decoration: none;
+  &:hover {
+    color: #f4ca03;
+  }
+}
+.fail {
+  color: #ec413d;
+  text-decoration: none;
+  &:hover {
+    color: #ec413d;
+  }
+}
+.success {
+  color: #70b01b;
+  text-decoration: none;
+  &:hover {
+    color: #70b01b;
+  }
+}
