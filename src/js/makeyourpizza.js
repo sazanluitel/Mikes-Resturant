@@ -18,9 +18,20 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   //   addind dipboxes
   const extraTop = document.getElementById("extraTopping");
+  let myModal = new bootstrap.Modal(extraTop);
   extraTop.addEventListener("submit", (e) => {
+    let elem = document.querySelector(".dips .item").cloneNode(true);
+    elem.classList.remove("d-none");
+    [...document.querySelectorAll(".dips .item")].forEach((elem) => {
+      elem.remove();
+    });
+
     e.preventDefault();
-    let listTop = extraTopForm.querySelectorAll("input[name='extra']:checked");
+    let listTop = extraTop.querySelectorAll("input[name='extra']:checked");
     listTop = [...listTop];
+    myModal.hide();
+    listTop.forEach((item) => {
+      document.querySelector(".dips").innerHTML += elem.outerHTML;
+    });
   });
 });
