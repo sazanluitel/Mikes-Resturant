@@ -114,6 +114,11 @@ a {
     color: var(--black);
   }
 }
+.btn-trans {
+  background-color: transparent;
+  border: 2px solid var(--black);
+  font-weight: $font-medium;
+}
 .btn-white {
   background-color: var(--white);
   color: var(--red);
