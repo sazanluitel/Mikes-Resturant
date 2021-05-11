@@ -26,4 +26,43 @@ window.addEventListener("DOMContentLoaded", (event) => {
   });
 
   // extra dripping
+  const extraTop = document.getElementById("extraTopping");
+  const extraTopForm = extraTop.querySelector("form");
+
+  extraTop.addEventListener("shown.bs.modal", function () {
+    // extraTopForm.reset();
+  });
+
+  extraTopForm
+    .querySelector(".buttons .btn.btn-secondary")
+    .addEventListener("click", (e) => {
+      extraTopForm.reset();
+    });
+
+  extraTopForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let listTop = extraTopForm.querySelectorAll("input[name='extra']:checked");
+    listTop = [...listTop];
+    let price = [];
+
+    let totalPrice = parseFloat(
+      document.querySelector("#addFood .totalPrice b").getAttribute("price")
+    );
+    let value = parseInt(
+      document.querySelector("#addFood .cart__wrapper input").value
+    );
+
+    listTop.map((elem, index) => {
+      let tempP = elem.nextElementSibling.getAttribute("price");
+      price.push(tempP);
+      document.querySelector("#addFood .totalPrice b").innerText = (
+        (totalPrice + tempP) *
+        value
+      ).toFixed(2);
+    });
+
+    let myModal = new bootstrap.Modal(extraTop, {
+      keyboard: true,
+    });
+  });
 });

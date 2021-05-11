@@ -70,31 +70,7 @@
     margin: 4em 0;
     .cart__wrapper {
       width: 50%;
-      height: 45px;
-      background-color: hsla(0, 0%, 100%, 0.2);
-      color: #fff;
-      display: flex;
-      @include border-radius;
-      span {
-        height: 100%;
-        width: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        @include noSelect;
-      }
-      input {
-        height: 100%;
-        width: 100%;
-        background-color: transparent;
-        border: none !important;
-        box-shadow: none !important;
-        outline: none !important;
-        color: #fff;
-        text-align: center;
-        font-weight: $font-bold;
-      }
+      @include addtocart;
     }
     .totalPrice {
       text-align: right;

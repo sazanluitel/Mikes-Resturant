@@ -320,4 +320,9 @@ section {
   &:hover {
     color: #70b01b;
   }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
