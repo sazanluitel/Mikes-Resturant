@@ -64,9 +64,8 @@
       e.preventDefault();
       let value = dec.nextElementSibling.value;
       if (value > 1) dec.nextElementSibling.value = --value;
-      let priceElem = e.currentTarget.parentNode.nextElementSibling.querySelector(
-        "b"
-      );
+      let event = new Event("change");
+      dec.nextElementSibling.dispatchEvent(event);
       priceInc(e, value);
     });
   });
@@ -80,18 +79,21 @@
       if (value < max) {
         elem.value = ++value;
         priceInc(e, value);
+        let event = new Event("change");
+        elem.dispatchEvent(event);
       }
     });
   });
 
   // increse price
   const priceInc = (e, value) => {
-    let priceElem = e.currentTarget.parentNode.nextElementSibling.querySelector(
-      "b"
-    );
-    let price = priceElem.getAttribute("price");
-    price = (parseFloat(price) * value).toFixed(2);
-    priceElem.innerText = price;
+    let priceElem =
+      e.currentTarget.parentNode.nextElementSibling.querySelector("b");
+    if (priceElem) {
+      let price = priceElem.getAttribute("price");
+      price = (parseFloat(price) * value).toFixed(2);
+      priceElem.innerText = price;
+    }
   };
 
   //Veg Check

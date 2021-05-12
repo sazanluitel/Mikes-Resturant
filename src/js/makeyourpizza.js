@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   // init all input
   const pizzaSize = document.getElementById("size");
   const primaryDip = document.getElementById("primarydip");
+  const itemCount = document.getElementById("itemCount");
 
   // init price variable
   let priceSize = parseFloat(
@@ -27,7 +28,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
     ).toFixed(2),
     pricePrimaryDip = 0,
     priceExtraDip = 0,
-    priceTotal = 0;
+    priceTotal = 0,
+    count = 1;
 
   // setting price size;
   pizzaSize.addEventListener("change", (e) => {
@@ -42,6 +44,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
       e.currentTarget.selectedOptions[0].getAttribute("data-price");
     pricePrimaryDip = parseFloat(pricePrimaryDip).toFixed(2);
     pricePrimaryDip = parseFloat(pricePrimaryDip);
+    getTotalPrice();
+  });
+
+  //setting  total cart number
+  itemCount.addEventListener("change", (e) => {
+    count = parseInt(e.currentTarget.value);
     getTotalPrice();
   });
 
@@ -72,7 +80,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   const getTotalPrice = () => {
     debugger;
-    priceTotal = priceSize + pricePrimaryDip + priceExtraDip;
+    priceTotal = (priceSize + pricePrimaryDip + priceExtraDip) * count;
     // console.log("priceSize", priceSize);
     // console.log("pricePrimaryDip", pricePrimaryDip);
     // console.log("priceTotal", priceTotal);
