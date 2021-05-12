@@ -1,0 +1,71 @@
+{% extends 'layout/_layout.twig' %} {% block title %}Order History - Berlin
+Pizza {% endblock %} {% block javascripts %} {% endblock %} {% block contents %}
+
+<div class="oderhistory-page">
+    <div class="row">
+      <div class="col-12">
+        <div class="order--title">
+          <h3>Order History</h3>
+          <div class="order-count"><span>5</span> Orders</div>
+        </div>
+        <div class="order-table">
+          <table>
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Order Date</th>
+                <th>Order Status</th>
+                <th>Total Price</th>
+                <th>Delivered to</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Friday, May 2, 2021</td>
+                <td><a href="" class="req">Dispatched</a></td>
+                <td>$58.06</td>
+                <td>Mr. Jory Tribbiani</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Friday, May 2, 2021</td>
+                <td><a href="" class="fail">Cancelled</a></td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Friday, May 2, 2021</td>
+                <td><a href="./order-detail" class="success">Delivered</a></td>
+                <td>$58.06</td>
+                <td>Mr. Jory Tribbiani</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Friday, May 2, 2021</td>
+                <td><a href="./order-detail" class="success">Delivered</a></td>
+                <td>$58.06</td>
+                <td>Mr. Jory Tribbiani</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Friday, May 2, 2021</td>
+                <td><a href="./order-detail" class="success">Delivered</a></td>
+                <td>$58.06</td>
+                <td>Mr. Jory Tribbiani</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>        
+        <div class="pages">
+          <div class="page active"><a href="#!">1</a></div>
+          <div class="page"><a href="#!">2</a></div>
+          <div class="page"><a href="#!">...</a></div>
+          <div class="page"><a href="#!">9</a></div>
+        </div>
+      </div>
+  </section>
+</div>
+
+{% endblock %}

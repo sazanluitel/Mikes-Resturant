@@ -7,13 +7,34 @@
       flex-wrap: wrap;
       .form-group {
         &:nth-child(1) {
-          width: 15%;
+          width: 20%;
+          @include xxl {
+            width: 100%;
+            margin-bottom: 1em;
+          }
         }
         &:nth-child(2) {
-          width: 70%;
+          width: 69%;
+          @include xl {
+            width: 78%;
+          }
+          @include md {
+            width: 100%;
+          }
         }
         &:nth-child(3) {
           width: 10%;
+          @include xl {
+            width: 20%;
+          }
+          @include md {
+            width: 100%;
+          }
+        }
+        &:nth-child(4) {
+          @include md {
+            width: 100%;
+          }
         }
         .seeall {
           button {
@@ -24,6 +45,9 @@
         }
         &.vegcheck {
           @include flexer(space-between, center);
+          @include xxl {
+            justify-content: flex-start;
+          }
           .radio-item {
             margin-right: 1em;
             &:last-child {
@@ -75,12 +99,23 @@
         }
         &.inline-group {
           @include flexer(flex-end, center);
+          @include xxl {
+            justify-content: flex-start;
+          }
+          @include xl {
+            flex-wrap: wrap;
+          }
+          @include md {
+            justify-content: space-evenly;
+          }
           gap: 1em;
-          &::-webkit-scrollbar {
-            display: none;
+          @include md {
+            gap: 0;
           }
           .form-item {
-            margin-left: 1em;
+            @include md {
+              margin-top: 1em;
+            }
             .filter {
               display: none;
             }
@@ -111,11 +146,18 @@
         }
         .accordion {
           text-align: right;
+          @include md {
+            text-align: center;
+            margin-top: 1em;
+          }
         }
       }
       .accordion-collapse {
         width: 100%;
-        margin-top: 2em;
+        margin: 1em 0;
+        @include md {
+          margin-bottom: 0;
+        }
         .accordion-body.inline-group {
           padding: 0;
           @include flexer(flex-start, center);
@@ -123,6 +165,9 @@
           gap: 1em;
           &::-webkit-scrollbar {
             display: none;
+          }
+          @include md {
+            justify-content: space-evenly;
           }
           .form-item {
             .filter {
@@ -163,6 +208,7 @@
       color: var(--black);
       position: relative;
       transition: 0.3s;
+      margin-bottom: 2em;
       figure {
         margin: 0;
         border-radius: 5px;
@@ -214,6 +260,7 @@
             label {
               display: inline-block;
               padding: 0.5em;
+              cursor: pointer;
               &:hover {
                 background-color: var(--primary-color);
                 color: var(--white);
@@ -252,6 +299,36 @@
           }
         }
       }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.make-pizza {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 4;
+  background-color: var(--primary-color);
+  &:hover {
+    a svg {
+      animation-play-state: paused;
+    }
+  }
+  a {
+    color: var(--black);
+    svg {
+      animation: rotate 2s ease-in-out infinite both;
     }
   }
 }

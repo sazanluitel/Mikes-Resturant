@@ -5,7 +5,10 @@
   max-width: 100%;
   color: var(--grery);
   visibility: visible;
-
+  @include sm {
+    min-width: 101%;
+    max-width: 100%;
+  }
   .section--title--wrapper {
     width: 100%;
     .section--title {
@@ -27,6 +30,7 @@
   }
 
   form {
+    margin-bottom: 2em;
     select,
     button.select {
       background-color: #1a1a1a;
@@ -106,10 +110,22 @@
       .icon {
         width: 40px;
         margin-right: 1em;
+        @include md {
+          width: 30px;
+        }
+        @include sm {
+          width: 20px;
+        }
         svg {
           width: 40px;
           height: 100%;
           fill: var(--white);
+          @include md {
+            width: 30px;
+          }
+          @include sm {
+            width: 20px;
+          }
         }
       }
       .info {
@@ -118,6 +134,9 @@
           font-weight: $font-medium;
           color: var(--white);
           margin-bottom: 0;
+          @include sm {
+            font-size: 0.8em;
+          }
         }
         small {
           font-size: 0.8em;
@@ -154,6 +173,17 @@
             height: 50px;
             padding: 0 1em;
           }
+        }
+      }
+      .collection-list {
+        padding: 1em 0;
+        h4 {
+          color: var(--white);
+          font-size: 1em;
+        }
+        ul {
+          color: var(--white);
+          padding-left: 1em;
         }
       }
     }

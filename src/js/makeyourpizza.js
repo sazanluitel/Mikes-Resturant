@@ -7,13 +7,42 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   pizzaLeftSelect.addEventListener("change", (e) => {
     let src = e.currentTarget.selectedOptions[0].getAttribute("data-src");
-    console.log(src);
+    // console.log(src);
     pizzaLeft.setAttribute("src", src);
   });
   pizzaRightSelect.addEventListener("change", (e) => {
     let src = e.currentTarget.selectedOptions[0].getAttribute("data-src");
-    console.log(src);
+    // console.log(src);
     pizzaRight.setAttribute("src", src);
+  });
+
+  // everything for the shake of prize
+  // init all input
+  const pizzaSize = document.getElementById("size");
+  const primaryDip = document.getElementById("primarydip");
+
+  // init price variable
+  let priceSize = parseFloat(
+      pizzaSize.selectedOptions[0].getAttribute("data-price")
+    ).toFixed(2),
+    pricePrimaryDip = 0,
+    priceExtraDip = 0,
+    priceTotal = 0;
+
+  // setting price size;
+  pizzaSize.addEventListener("change", (e) => {
+    priceSize = e.currentTarget.selectedOptions[0].getAttribute("data-price");
+    priceSize = parseFloat(priceSize);
+    getTotalPrice();
+  });
+
+  // setting pricePrimaryDip;
+  primaryDip.addEventListener("change", (e) => {
+    pricePrimaryDip =
+      e.currentTarget.selectedOptions[0].getAttribute("data-price");
+    pricePrimaryDip = parseFloat(pricePrimaryDip).toFixed(2);
+    pricePrimaryDip = parseFloat(pricePrimaryDip);
+    getTotalPrice();
   });
 
   //   addind dipboxes
@@ -30,8 +59,24 @@ window.addEventListener("DOMContentLoaded", (event) => {
     let listTop = extraTop.querySelectorAll("input[name='extra']:checked");
     listTop = [...listTop];
     myModal.hide();
+    priceExtraDip = 0;
     listTop.forEach((item) => {
       document.querySelector(".dips").innerHTML += elem.outerHTML;
+      priceExtraDip += parseFloat(
+        item.nextElementSibling.getAttribute("price")
+      );
     });
+    priceExtraDip = parseFloat(priceExtraDip.toFixed(2));
+    getTotalPrice();
   });
+
+  const getTotalPrice = () => {
+    debugger;
+    priceTotal = priceSize + pricePrimaryDip + priceExtraDip;
+    // console.log("priceSize", priceSize);
+    // console.log("pricePrimaryDip", pricePrimaryDip);
+    // console.log("priceTotal", priceTotal);
+    // console.log("priceExtraDip ", priceExtraDip);
+    document.getElementById("totalPrice").innerText = priceTotal;
+  };
 });

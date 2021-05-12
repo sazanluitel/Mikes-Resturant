@@ -29,6 +29,16 @@
     </div>
   </div>
   <div class="header__right">
+    <div class="mobile-nav">
+      <div id="ham">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="./index.html" class="logo" title="Berlin Pizza">
+        <img src="./img/logo.png" alt="Berlin Pizza" />
+      </a>
+    </div>
     <div class="user--actions">
       <div class="buttons">
         <button
@@ -91,8 +101,8 @@
               stroke-linejoin="round"
             />
           </svg>
-
           <span>View Order</span>
+          <sup class="count">5</sup>
         </button>
       </div>
     </div>
@@ -110,7 +120,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="row">
-        <div class="col-xl-6">
+        <div class="col-xl-6 col-lg-6 col-md-12">
           <div class="form">
             <div class="signup active">
               <h3>Sign Up</h3>
@@ -125,25 +135,27 @@
                 </div>
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input type="password" id="password"></textarea>
+                  <input type="password" id="password" />
                 </div>
                 <div class="form-group">
                   <label for="password2">Confirm Password</label>
-                  <input type="password" id="password2"></textarea>
+                  <input type="password" id="password2" />
                 </div>
                 <div class="form-group">
                   <label for="phone">Phone Number</label>
-                  <input type="text" id="phone">
+                  <input type="text" id="phone" />
                 </div>
                 <div class="form-group">
                   <button class="btn">
                     <span>Sign Up</span>
                   </button>
-                  <small>Already a user? <span id="loginbtn">Login</span></small>
+                  <small
+                    >Already a user? <span id="loginbtn">Login</span></small
+                  >
                 </div>
               </form>
-            </div>            
-            <div class="login ">
+            </div>
+            <div class="login">
               <h3>Login</h3>
               <form action="">
                 <div class="form-group">
@@ -152,19 +164,22 @@
                 </div>
                 <div class="form-group">
                   <label for="log_password">Password</label>
-                  <input type="password" id="log_password"></textarea>
+                  <input type="password" id="log_password" />
                 </div>
                 <div class="form-group">
                   <button class="btn">
                     <span>Sign Up</span>
                   </button>
-                  <small>Don't have an account? <span id="signbtn">Signup</span></small>
+                  <small
+                    >Don't have an account?
+                    <span id="signbtn">Signup</span></small
+                  >
                 </div>
               </form>
             </div>
           </div>
         </div>
-        <div class="col-xl-6">
+        <div class="col-xl-6 col-lg-6 col-md-12">
           <div class="sayings">
             <div class="box">
               <p>

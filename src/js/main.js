@@ -143,4 +143,18 @@
       logmod.classList.add("active");
     });
   }
+
+  //Hamburger actions
+  let hamburger = document.getElementById("ham");
+  let sidebar = document.querySelector(".nav--left");
+  hamburger.addEventListener("click", () => {
+    sidebar.classList.add("show");
+  });
+  document.addEventListener("click", (e) => {
+    var checkit = sidebar.contains(e.target);
+    var checkit2 = hamburger.contains(e.target);
+    if (!checkit && !checkit2) {
+      sidebar.classList.remove("show");
+    }
+  });
 })();
