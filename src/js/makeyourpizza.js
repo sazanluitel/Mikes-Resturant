@@ -24,8 +24,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   // init price variable
   let priceSize = parseFloat(
-      pizzaSize.selectedOptions[0].getAttribute("data-price")
-    ).toFixed(2),
+      parseFloat(
+        pizzaSize.selectedOptions[0].getAttribute("data-price")
+      ).toFixed(2)
+    ),
     pricePrimaryDip = 0,
     priceExtraDip = 0,
     priceTotal = 0,
@@ -81,10 +83,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const getTotalPrice = () => {
     debugger;
     priceTotal = (priceSize + pricePrimaryDip + priceExtraDip) * count;
-    // console.log("priceSize", priceSize);
-    // console.log("pricePrimaryDip", pricePrimaryDip);
-    // console.log("priceTotal", priceTotal);
-    // console.log("priceExtraDip ", priceExtraDip);
+    priceTotal = parseFloat(priceTotal.toFixed(2));
+    console.log("priceSize", priceSize);
+    console.log("pricePrimaryDip", pricePrimaryDip);
+    console.log("count ", count);
+    console.log("priceExtraDip ", priceExtraDip);
+    console.log("priceTotal", priceTotal);
     document.getElementById("totalPrice").innerText = priceTotal;
   };
 });
