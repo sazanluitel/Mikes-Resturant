@@ -14,6 +14,12 @@ To run the engine. It will create the build folder with all the HTML files.
 npm run serve
 ```
 
+To build the dist files.
+
+```
+npm run build
+```
+
 It is configured with the following.
 
 - gulp-twig2html (Convets all the twig files to HTML)
