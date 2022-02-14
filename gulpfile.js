@@ -1,81 +1,105 @@
-var gulp = require("gulp");
-var imagemin = require("gulp-imagemin");
-var uglify = require("gulp-uglify");
-var sass = require("gulp-sass");
-var sassGlob = require("gulp-sass-glob");
-var devserver = require("browser-sync");
-var twig = require("gulp-twig2html");
-var rename = require("gulp-rename");
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var sourcemaps = require("gulp-sourcemaps");
+let gulp = require("gulp"),
+  twig = require("gulp-twig2html"),
+  plumber = require("gulp-plumber"),
+  rename = require("gulp-rename"),
+  devserver = require("browser-sync"),
+  babel = require("gulp-babel"),
+  autoprefixer = require("autoprefixer"),
+  sass = require("gulp-sass")(require("sass")),
+  postcss = require("gulp-postcss"),
+  cssnano = require("cssnano"),
+  sourcemap = require("gulp-sourcemaps"),
+  uglify = require("gulp-uglify");
 
-//Copying the twig to HTML
+/*
+ * A twig task
+ */
 gulp.task("twig", function () {
   return gulp
     .src(["src/**/*.twig", "!src/**/_*.twig"])
+    .pipe(plumber())
     .pipe(twig({}))
     .pipe(rename({ extname: ".html" }))
-    .pipe(gulp.dest("dist"));
+    .pipe(gulp.dest("dist/"));
 });
 
-//Optimizing Images
-gulp.task("imageMin", async () => {
-  gulp.src("src/img/*").pipe(imagemin()).pipe(gulp.dest("dist/img"));
+/**
+ * A js task
+ */
+gulp.task("javascript", function () {
+  return gulp
+    .src(["src/js/**/*.js"])
+    .pipe(
+      babel({
+        presets: ["@babel/env"],
+      })
+    )
+    .pipe(gulp.dest("dist/js"));
 });
-
-//Minifying Js
-gulp.task("minifyJs", async () => {
-  gulp
-    .src([
-      "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-      "src/js/*.js",
-    ])
+gulp.task("javascript-build", function () {
+  return gulp
+    .src(["src/js/**/*.js"])
+    .pipe(
+      babel({
+        presets: ["@babel/env"],
+      })
+    )
     .pipe(uglify())
     .pipe(gulp.dest("dist/js"));
 });
 
-//SCSS Compiling
-gulp.task("sass", async () => {
-  gulp
-    .src("src/sass/main.scss")
-    .pipe(sourcemaps.init())
-    .pipe(sassGlob())
-    .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
-    .pipe(postcss([autoprefixer({ flexbox: true })]))
-    .pipe(sourcemaps.write())
+/**
+ * A scss task
+ */
+gulp.task("style", function () {
+  return gulp
+    .src("src/scss/main.scss")
+    .pipe(plumber())
+    .pipe(sourcemap.init())
+    .pipe(sass())
+    .pipe(
+      postcss([
+        autoprefixer({
+          flexbox: true,
+          grid: "autoplace",
+        }),
+      ])
+    )
+    .pipe(sourcemap.write())
+    .pipe(gulp.dest("dist/css"));
+});
+gulp.task("style-build", function () {
+  return gulp
+    .src("src/scss/index.scss")
+    .pipe(plumber())
+    .pipe(
+      sass({
+        outputStyle: "expanded",
+      })
+    )
+    .pipe(
+      postcss([
+        autoprefixer({
+          flexbox: true,
+          grid: "autoplace",
+        }),
+        cssnano(),
+      ])
+    )
+    .pipe(sourcemap.write())
     .pipe(gulp.dest("dist/css"));
 });
 
-//Default
-gulp.task(
-  "build",
-  gulp.series("sass", "minifyJs", "twig", "imageMin"),
-  async () => {
-    console.log("Ola Gulp is Walking...");
-  }
-);
+//Image copy task
+gulp.task("imageTask", function () {
+  return gulp.src("src/img/**/*.*").pipe(gulp.dest("dist/img/"));
+});
 
-//Watching
-const watch = async () => {
-  gulp.watch("src/sass/**/*.scss", gulp.series("sass", "browser-reload"));
-  gulp.watch(
-    [
-      "node_modules/bootstrap/dist/js/bootstrap.js",
-      "node_modules/jquery/dist/jquery.min.js",
-      "src/js/*.js",
-    ],
-    gulp.series("minifyJs", "browser-reload")
-  );
-  gulp.watch("src/**/*.twig", gulp.series("twig", "browser-reload"));
-  gulp.watch("src/img/*", gulp.series("imageMin", "browser-reload"));
-  httpserver.init(serveoptions);
-};
-
-//Devserver
+// Start development server
+// This is an option
 const serveoptions = {
   server: {
-    baseDir: "./dist",
+    baseDir: "./dist/",
     index: "index.html",
     serveStaticOptions: {
       extensions: ["html"],
@@ -83,10 +107,24 @@ const serveoptions = {
   },
 };
 const httpserver = devserver.create();
-
 gulp.task("browser-reload", function (cb) {
   httpserver.reload();
   cb();
 });
 
-module.exports.serve = gulp.series("build", watch);
+function watch(cb) {
+  gulp.watch("src/views/**/*.twig", gulp.series("twig", "browser-reload"));
+  gulp.watch("src/images/**/*.*", gulp.series("imageTask", "browser-reload"));
+  gulp.watch("src/js/**/*.js", gulp.series("javascript", "browser-reload"));
+  gulp.watch("src/scss/**/*.scss", gulp.series("style", "browser-reload"));
+  httpserver.init(serveoptions);
+}
+
+gulp.task("serve", gulp.series("twig", "javascript", "style", "imageTask"));
+gulp.task(
+  "build",
+  gulp.series("twig", "javascript-build", "style-build", "imageTask")
+);
+
+module.exports.serve = gulp.series("serve", watch);
+module.exports.build = gulp.series("build");
