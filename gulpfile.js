@@ -70,7 +70,7 @@ gulp.task("style", function () {
 });
 gulp.task("style-build", function () {
   return gulp
-    .src("src/scss/index.scss")
+    .src("src/scss/main.scss")
     .pipe(plumber())
     .pipe(
       sass({
