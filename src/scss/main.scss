@@ -85,3 +85,24 @@ button,
   -webkit-appearance: none;
   border-radius: 0;
 }
+
+.filters {
+  .food__subcategory {
+    ul {
+      margin-top: 20px;
+      text-decoration: none;
+      list-style: none;
+      display: flex;
+      gap: 10px;
+    }
+    li {
+      text-decoration: none;
+    }
+    li a {
+      color: var(--black);
+      background-color: var(--primary-color);
+      padding: 15px 3px;
+      border-radius: 10px !important;
+    }
+  }
+}

@@ -19,6 +19,7 @@
 
   .combos {
     .combo-grid {
+      height: 630px;
       grid-template-columns: 2fr 1fr;
       @include sm {
         grid-template-columns: 1fr;
@@ -60,7 +61,7 @@
               .item {
                 height: 100%;
                 img {
-                  width: auto;
+                  width: 100%;
                   height: 100%;
                   object-fit: cover;
                 }
@@ -116,8 +117,11 @@
       a {
         color: var(--black);
         figure {
+          height: 200px;
           img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
         }
         figcaption {

@@ -36,12 +36,16 @@
     .nav-link {
       padding: 0.8em 1.2em;
       color: var(--dark);
+      display: inline-flex;
+      width: 100%;
+      align-items: center;
+      gap: 20px;
       @include border-radius;
       // @include transition;
       font-weight: $font-medium;
 
-      svg {
-        margin-right: 0.8em;
+      i {
+        font-size: 20px;
       }
       &:hover,
       &.active {
@@ -60,14 +64,26 @@
 
     //Droppe
     .droppe {
-      background-color: var(--grey);
+      border-style: dashed solid;
+      border-color: lightgray;
+      border-width: 1px;
       border-radius: 8px;
       padding: 1em;
       font-size: 0.8em;
       cursor: pointer;
       position: relative;
-      .selected-branch {
+      .location {
         @include flexer(space-between, center);
+      }
+      .location a {
+        color: var(--black);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .location__arrow {
+        margin-left: 30px;
       }
       &.show {
         .dropped {

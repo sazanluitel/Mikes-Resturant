@@ -10,13 +10,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
       // form card
       let img = active.querySelector("img").getAttribute("src");
       let title = active.querySelector(".menu-infos h3").innerText;
-      let price = active.querySelector(".price h2 strong").innerText;
       // assigning
       addFood.querySelector(".image img").setAttribute("src", img);
-      addFood.querySelector("form .section--title.white").innerText = title;
-      addFood.querySelector("form .totalPrice b").innerText = price;
-      addFood.querySelector("form .totalPrice b").setAttribute("price", price);
-
+      addFood.querySelector(".offcanvas-header .section--title--wrapper .section--title.white").innerText = title;
       addFood.classList.add("show");
     });
   });

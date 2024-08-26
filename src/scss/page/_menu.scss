@@ -3,8 +3,10 @@
   .filters {
     margin-bottom: 2em;
     form.inline-form {
-      @include flexer(space-between, center);
-      flex-wrap: wrap;
+      .menu__heading{
+        display: flex;
+        justify-content: space-between !important;
+      }
       .form-group {
         &:nth-child(1) {
           width: 20%;
@@ -14,7 +16,6 @@
           }
         }
         &:nth-child(2) {
-          width: 69%;
           @include xl {
             width: 78%;
           }
@@ -36,18 +37,8 @@
             width: 100%;
           }
         }
-        .seeall {
-          button {
-            border: 0;
-            background-color: transparent;
-            font-size: 0.8em;
-          }
-        }
         &.vegcheck {
-          @include flexer(space-between, center);
-          @include xxl {
-            justify-content: flex-start;
-          }
+          display: flex;
           .radio-item {
             margin-right: 1em;
             &:last-child {
@@ -98,7 +89,7 @@
           }
         }
         &.inline-group {
-          @include flexer(flex-end, center);
+          display: flex;
           @include xxl {
             justify-content: flex-start;
           }
@@ -113,63 +104,16 @@
             gap: 0;
           }
           .form-item {
+            color: var(--black);
             @include md {
               margin-top: 1em;
             }
-            .filter {
-              display: none;
-            }
-            .filter.check + label {
+            &:hover{
               background-color: var(--primary-color);
               color: var(--white);
-              svg {
-                stroke: var(--white);
-              }
-            }
-            .cust-checkbox {
-              background-color: transparent;
-              border: 1px solid var(--primary-color);
+              border: 0px !important;
               border-radius: 10px;
-              min-width: 140px;
-              @include flexer(center, center);
-              svg {
-                stroke: var(--color-ac);
-                transition: 0.4s;
-                margin-right: 1em;
-              }
-              color: var(--color-ac);
-              span {
-                white-space: nowrap;
-              }
             }
-          }
-        }
-        .accordion {
-          text-align: right;
-          @include md {
-            text-align: center;
-            margin-top: 1em;
-          }
-        }
-      }
-      .accordion-collapse {
-        width: 100%;
-        margin: 1em 0;
-        @include md {
-          margin-bottom: 0;
-        }
-        .accordion-body.inline-group {
-          padding: 0;
-          @include flexer(flex-start, center);
-          flex-wrap: wrap;
-          gap: 1em;
-          &::-webkit-scrollbar {
-            display: none;
-          }
-          @include md {
-            justify-content: space-evenly;
-          }
-          .form-item {
             .filter {
               display: none;
             }
@@ -199,6 +143,7 @@
           }
         }
       }
+
     }
   }
 
@@ -288,17 +233,10 @@
           display: none;
         }
         .menu-infos {
-          background-color: var(--black);
-          h3 {
-            color: var(--white);
-          }
+          background-color: var(--secondary-color);
+          color: var(--white);
         }
-        .price {
-          h2 {
-            color: var(--primary-color);
-          }
         }
-      }
     }
   }
 }
@@ -319,15 +257,20 @@
   bottom: 1em;
   right: 1em;
   z-index: 4;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   &:hover {
+    a{
+      color:var(--white);
+    }
     a svg {
       animation-play-state: paused;
+      color:var(--white);
     }
   }
   a {
-    color: var(--black);
+    color: var(--white) !important;
     svg {
+      stroke: var(--white);
       animation: rotate 2s ease-in-out infinite both;
     }
   }

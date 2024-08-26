@@ -75,9 +75,14 @@ header {
       @include sm {
         text-align: right;
       }
+      i{
+        font-size: 15px !important;
+      }
       button {
+        gap:10px;
         &:last-child {
           margin-left: 2em;
+          background-color: var(--green);
           @include lg {
             margin-left: 0.5em;
           }
@@ -88,6 +93,7 @@ header {
         svg,
         span {
           pointer-events: none;
+          color: white !important;
         }
         @include lg {
           span {
